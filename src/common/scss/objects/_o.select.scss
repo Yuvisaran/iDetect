@@ -1,0 +1,29 @@
+/* =========================================================================  */
+/* Select */
+/* =========================================================================  */
+
+.o-select {
+    @include font('small');
+    color: $neutral-text;
+    background-color: $white;
+    appearance: none;
+    border: .2rem solid $neutral-4;
+    border-radius: $border-radius;
+    padding: ($text-box-v-spacing + 0.1rem) 3rem ($text-box-v-spacing + 0.1rem) $text-box-h-spacing;
+    line-height: 1;
+    width: 100%;
+    background: {
+        image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iOXB4IiBoZWlnaHQ9IjE1cHgiIHZpZXdCb3g9IjAgMCA5IDE1IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogICAgPCEtLSBHZW5lcmF0b3I6IFNrZXRjaCA0Ni4yICg0NDQ5NikgLSBodHRwOi8vd3d3LmJvaGVtaWFuY29kaW5nLmNvbS9za2V0Y2ggLS0+CiAgICA8dGl0bGU+U2VsZWN0IEFycm93PC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGRlZnM+PC9kZWZzPgogICAgPGcgaWQ9IlN5bWJvbHMiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+CiAgICAgICAgPGcgaWQ9Im9iamVjdHMvaW5wdXRzL2Ryb3Bkb3duIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMzExLjAwMDAwMCwgLTM0LjAwMDAwMCkiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlPSIjODg4RDk1Ij4KICAgICAgICAgICAgPGcgaWQ9ImZpdC1ob3Jpem9udGFsIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzMTUuNTAwMDAwLCA0MS4wMDAwMDApIHJvdGF0ZSgtOTAuMDAwMDAwKSB0cmFuc2xhdGUoLTMxNS41MDAwMDAsIC00MS4wMDAwMDApIHRyYW5zbGF0ZSgzMDcuNTAwMDAwLCAzMy41MDAwMDApIj4KICAgICAgICAgICAgICAgIDxnIGlkPSJTZWxlY3QtQXJyb3ciIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEuMDAwMDAwLCA0LjAwMDAwMCkiPgogICAgICAgICAgICAgICAgICAgIDxwb2x5bGluZSBpZD0iU2hhcGUiIHBvaW50cz0iOS43NTQwOTgzNiAwLjU1MzU3MTQyOSAxMi42MzkzNDQzIDMuNSA5Ljc1NDA5ODM2IDYuNDQ2NDI4NTciPjwvcG9seWxpbmU+CiAgICAgICAgICAgICAgICAgICAgPHBvbHlsaW5lIGlkPSJTaGFwZSIgcG9pbnRzPSIyLjk4MzYwNjU2IDYuNDQ2NDI4NTcgMC4wOTgzNjA2NTU3IDMuNSAyLjk4MzYwNjU2IDAuNTUzNTcxNDI5Ij48L3BvbHlsaW5lPgogICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4=');
+        repeat: no-repeat;
+        position: right 0.9rem top calc(50% - 0.1rem);
+    }
+
+    [data-whatintent="keyboard"] &:focus {
+        outline: none;
+        @include focus-ring-border(2px);
+    }
+
+    [data-whatintent="mouse"] &:focus {
+        outline: none;
+    }
+}

@@ -1,0 +1,120 @@
+/* =========================================================================  */
+/* Object: titles */
+/* =========================================================================  */
+
+.o-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.o-heading__title {
+    @include font('large');
+    color: $neutral-text-dark;
+    margin: 0;
+    padding: $spacing-l $spacing-xs;
+}
+
+.o-heading__action {
+    cursor: pointer;
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+}
+
+/* =========================================================================  */
+/* Modifier: inline */
+/* =========================================================================  */
+
+.o-heading--inline .o-heading__title {
+    padding: 0;
+}
+
+.o-heading--subtitle {
+    border-bottom: .1rem solid $neutral-btn;
+    padding: .9rem 0;
+    margin-bottom: 1.6rem;
+
+    & .o-heading__title {
+        @include font('small');
+        padding: 0;
+    }
+}
+
+/* =========================================================================  */
+/* Modifier: secondary + sectioning */
+/* =========================================================================  */
+
+.o-heading--secondary,
+.o-heading--sectioning {
+    border-bottom: .1rem solid $neutral-btn;
+    padding: .9rem 0;
+    margin-bottom: 1.6rem;
+}
+
+.o-heading--secondary .o-heading__title,
+.o-heading--sectioning .o-heading__title {
+    @include font('large-button');
+    color: $neutral-text;
+    padding: 0;
+}
+
+/* =========================================================================  */
+/* Modifier: Sectioning title */
+/* =========================================================================  */
+
+.o-heading--sectioning {
+    margin-top: 1.1rem;
+}
+
+.o-heading--sectioning .o-heading__title {
+    font-size: 1.4rem;
+}
+
+/* =========================================================================  */
+/* Modifier: small */
+/* =========================================================================  */
+
+.o-heading--small {
+    border-bottom: .1rem solid $neutral-btn;
+    padding: .9rem 0;
+    margin-bottom: 1.6rem;
+}
+
+.o-heading--small .o-heading__title {
+    @include font('small');
+    color: $neutral-text;
+    padding: 0;
+}
+
+/* =========================================================================  */
+/* Modifier: collapsable */
+/* =========================================================================  */
+
+.o-heading--collapsable {
+    cursor: pointer;
+}
+
+/* =========================================================================  */
+/* Modifier: Reversed order */
+/* =========================================================================  */
+
+.o-heading--alternate {
+    justify-content: flex-end;
+    flex-direction: row-reverse;
+    padding: 0;
+    margin: 0;
+    border-bottom: 0;
+}
+
+.o-heading--alternate .o-heading__title {
+    margin-left: 7px;
+}
+
+/* =========================================================================  */
+/* Scope: popover */
+/* =========================================================================  */
+
+.c-popover .o-heading__title {
+    @include font('large-button');
+}

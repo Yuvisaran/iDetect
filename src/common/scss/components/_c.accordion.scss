@@ -1,0 +1,83 @@
+/* =========================================================================  */
+/* Component: accordion */
+/* =========================================================================  */
+
+.c-accordion {
+    background-color: $white;
+}
+
+.c-accordion__more {
+    transition: opacity .2s ease-in-out;
+    position: absolute;
+    top: 0.9rem;
+    right: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.c-accordion__components {
+    transition: max-height .2s ease-in-out;
+    max-height: 0;
+    overflow: hidden;
+}
+
+.c-accordion__components *:first-child {
+    margin-top: 0;
+}
+
+/* =========================================================================  */
+/* Scope: heading component in accordion */
+/* =========================================================================  */
+
+.c-accordion .o-heading__actions-wrapper .o-btn {
+    transition: transform .2s ease-in-out;
+    transform: rotate(90deg);
+}
+
+.c-accordion .o-heading__actions-wrapper .o-icon {
+    max-height: auto;
+    max-width: .95rem;
+}
+
+/* =========================================================================  */
+/* Interaction: collapse content container */
+/* =========================================================================  */
+
+.c-accordion.is-open .c-accordion__components {
+    max-height: 10000px;
+}
+
+.c-accordion.is-open .o-btn {
+    transform: rotate(0);
+}
+
+/* =========================================================================  */
+/* Modifier: Framed */
+/* =========================================================================  */
+
+.c-accordion--framed {
+    border: 2px solid $disabled;
+    border-radius: 2px;
+    padding: 3px 12px;
+}
+
+.c-accordion--framed.is-open .c-accordion__more {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.c-accordion--framed .c-accordion__heading {
+    position: relative;
+}
+
+.c-accordion--framed .o-heading__actions-wrapper .o-btn {
+    transform: rotate(-90deg);
+}
+
+.c-accordion--framed.is-open .o-heading__actions-wrapper .o-btn {
+    transform: rotate(0);
+}
+
+.c-accordion--framed .c-accordion__components > *:last-child {
+    margin-bottom: 9px;
+}

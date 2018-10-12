@@ -1,0 +1,68 @@
+/* =========================================================================  */
+/* Speech bubble */
+/* =========================================================================  */
+
+.o-speech-bubble {
+    @include font('xx-small');
+}
+
+.o-speech-bubble:before,
+.o-speech-bubble:after {
+    color: $neutral-text;
+}
+
+.o-speech-bubble:before {
+    content: attr(data-time);
+    display: block;
+    margin-bottom: $spacing-xxs;
+}
+
+.o-speech-bubble:after {
+    content: attr(data-author);
+    display: block;
+    margin-top: $spacing-xxs;
+}
+
+.o-speech-bubble__body {
+    @include well;
+    @include font('small');
+    display: inline-block;
+    max-width: 29rem;
+}
+
+/* =========================================================================  */
+/* Modifier: self */
+/* =========================================================================  */
+
+.o-speech-bubble--self {
+    text-align: right;
+}
+
+.o-speech-bubble--self .o-speech-bubble__body {
+    text-align: left;
+    color: $white;
+    background-color: $primary-color;
+}
+
+/* =========================================================================  */
+/* State: new */
+/* =========================================================================  */
+
+.o-speech-bubble.is-new {
+    position: relative;
+    transform: translateX(-2rem);
+    opacity: 0;
+    animation: slideIn 0.3s ease-out;
+    animation-fill-mode: forwards;
+}
+
+.o-speech-bubble--self.is-new {
+    transform: translateX(2rem);
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

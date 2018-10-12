@@ -1,0 +1,70 @@
+/* =========================================================================  */
+/* Component: Scroll box */
+/* =========================================================================  */
+
+.c-scroll-box {
+    position: relative;
+}
+
+.c-scroll-box.is-scrolling:before {
+    opacity: 1;
+}
+
+.c-scroll-box.no-top-gradient.is-scrolling:before {
+    opacity: 0;
+}
+
+.c-scroll-box:before,
+.c-scroll-box:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 0.6rem;
+    position: absolute;
+    left: 0;
+    z-index: 1;
+    transition: opacity 0.133s ease-in;
+    opacity: 0;
+}
+
+.c-scroll-box:before {
+    top: 0;
+    background-image: linear-gradient(to bottom, rgba(black, 0.06), rgba(white, 0));
+}
+
+.c-scroll-box:after {
+    bottom: 0;
+    background-image: linear-gradient(to top, rgba(black, 0.06), rgba(white, 0));
+}
+
+.c-scroll-box.has-fold:after {
+    opacity: 1;
+}
+
+.c-scroll-box.has-reached-end:after {
+    opacity: 0;
+}
+
+/**
+ * 1. This height is only used for demonstration purposes.
+ */
+.c-scroll-box__scrollable {
+    overflow-y: scroll;
+    max-height: 36.5rem; /* [1] */
+}
+
+/* =========================================================================  */
+/* Scpope: modal */
+/* =========================================================================  */
+
+.c-modal__body--scrollable .c-scroll-box {
+    padding: $modal-body-padding;
+}
+
+/* =========================================================================  */
+/* Scpope: conversation */
+/* =========================================================================  */
+
+.c-conversation__body .c-scroll-box {
+    padding: 0 $spacing-l;
+}

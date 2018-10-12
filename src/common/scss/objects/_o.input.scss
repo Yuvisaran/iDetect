@@ -1,0 +1,85 @@
+/* =========================================================================  */
+/* Object: text field */
+/* =========================================================================  */
+
+.o-input {
+    @include font-family($main-font-type);
+    @include font('small');
+    color: $neutral-text-dark;
+    border: .2rem solid $neutral-stroke;
+    border-radius: $border-radius;
+    padding: $text-box-v-spacing $text-box-h-spacing;
+    width: 100%;
+    appearance: none;
+
+    &:focus,
+    [data-whatinput="keyboard"] &:focus {
+        outline: none;
+        @include focus-ring;
+    }
+
+    [data-whatinput="mouse"] &:focus {
+        outline: none;
+        box-shadow: none;
+    }
+}
+
+.o-input::placeholder {
+    color: $neutral-text;
+}
+
+/* =========================================================================  */
+/* Modifier: multiline */
+/* =========================================================================  */
+
+.o-input--multiline {
+    resize: vertical;
+}
+
+/* =========================================================================  */
+/* Modifier: background */
+/* =========================================================================  */
+
+.o-input--bg {
+    border-color: $neutral-bg;
+    background-color: $neutral-bg;
+    min-height: 2rem + 0.8rem * 2 + 0.2rem * 2;
+    max-height: 2rem * 4 + 0.8rem * 2 + 0.2rem * 2;
+    overflow: scroll;
+}
+
+/* =========================================================================  */
+/* Modifier: background */
+/* =========================================================================  */
+
+.o-input--search {
+    padding-left: 3rem;
+}
+
+/* =========================================================================  */
+/* Modifier: date */
+/* =========================================================================  */
+
+.o-input--date {
+    width: 8.4em;
+    height: 3.4rem;
+}
+
+/* =========================================================================  */
+/* Modifier: time */
+/* =========================================================================  */
+
+.o-input--time {
+    height: 3.4rem;
+    padding-top: $text-box-v-spacing - 0.1;
+    padding-bottom: $text-box-v-spacing - 0.1;
+}
+
+/* =========================================================================  */
+/* Scope: Login page */
+/* =========================================================================  */
+
+.c-form--login .o-input {
+    box-shadow: none;
+    border: 1px solid $disabled;
+}

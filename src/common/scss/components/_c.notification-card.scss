@@ -1,0 +1,86 @@
+/* =========================================================================  */
+/* Component: Notification card */
+/* =========================================================================  */
+
+.c-notification-card {
+    transition: opacity .08s ease-in-out, transform .08s ease-in-out;
+    @include font('small');
+    border-radius: $border-radius;
+    background-color: #eee;
+    color: $neutral-text;
+    display: inline-flex;
+    padding: 1.2rem 1.5rem;
+    justify-content: space-between;
+    min-width: 30rem;
+    padding-right: 3.7rem;
+    position: relative;
+    transform: translateX(-1.5rem);
+    opacity: 0;
+}
+
+.c-notification-card__label {
+    position: relative;
+    top: 0.1rem;
+    margin-right: 2.5rem;
+}
+
+.c-notification-card__time {
+    position: relative;
+    top: 0.1rem;
+    opacity: .7;
+}
+
+.c-notification-card__btn {
+    position: absolute;
+    right: 1.1rem;
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $neutral-text;
+    cursor: pointer;
+
+    [data-whatinput="mouse"] &:focus {
+        outline: none;
+    }
+}
+
+.c-notification-card__btn .o-icon {
+    fill: red;
+}
+
+/* =========================================================================  */
+/* Interaction: is visible */
+/* =========================================================================  */
+
+.c-notification-card.is-open {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+/* =========================================================================  */
+/* Modifier: primary */
+/* =========================================================================  */
+
+.c-notification-card--primary {
+    background-color: $primary-color-bg-hover;
+    color: $primary-color;
+}
+
+.c-notification-card--primary .c-notification-card__btn {
+    color: $primary-color;
+}
+
+/* =========================================================================  */
+/* Modifier: error */
+/* =========================================================================  */
+
+.c-notification-card--error {
+    background-color: $light-red;
+    color: $red;
+}
+
+.c-notification-card--error .c-notification-card__btn {
+    color: $red;
+}

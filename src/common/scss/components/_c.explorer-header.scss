@@ -1,0 +1,37 @@
+/* =========================================================================  */
+/* Explorer parameters */
+/* =========================================================================  */
+
+$explorer-h-padding: 0.8rem;
+
+/* =========================================================================  */
+/* Explorer header */
+/* =========================================================================  */
+
+.c-explorer-header {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $spacing-l $explorer-h-padding 0;
+    margin-bottom: $spacing-m;
+}
+
+.c-explorer-header__title {
+    @include font('medium');
+    color: $neutral-text-dark;
+    margin: 0;
+}
+
+.c-explorer-header__action {
+    margin-right: $explorer-h-padding * -1;
+    padding: $explorer-h-padding;
+}
+
+.c-explorer-header__icon {
+    height: 0.8rem;
+    width: 0.8rem;
+    display: block;
+    fill: $primary-color;
+}

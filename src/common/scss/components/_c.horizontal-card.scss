@@ -1,0 +1,193 @@
+/* =========================================================================  */
+/* Component: Horizontal cards used to display contextal content */
+/* =========================================================================  */
+$item-amount: 5;
+
+.c-horizontal-card {
+    @include font('medium');
+    cursor: pointer;
+    transition: $bgco-transition;
+    color: $neutral-text-dark;
+    background-color: $white;
+    border-radius: $border-radius;
+    padding-right: 11rem;
+    margin-bottom: $spacing-l;
+    position: relative;
+    animation: fadeIn .3s ease-in-out forwards;
+    display: flex;
+    overflow: hidden;
+    min-width: 100%;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* =========================================================================  */
+/* Horizontal cards colored status*/
+/* =========================================================================  */
+
+.c-horizontal-card__color-coding {
+    content: '';
+    width: .6rem;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: $neutral-bg;
+    z-index: 1;
+    border-radius: 2px 0 0 2px;
+    will-change: transform;
+    margin-left: 0;
+}
+
+.c-horizontal-card__color-coding--low {
+    background-color: $risk-low;
+}
+
+.c-horizontal-card__color-coding--guarded {
+    background-color: $risk-guarded;
+}
+
+.c-horizontal-card__color-coding--elevated {
+    background-color: $risk-elevated;
+}
+
+.c-horizontal-card__color-coding--high {
+    background-color: $risk-high;
+}
+
+.c-horizontal-card__color-coding--severe {
+    background-color: $risk-severe;
+}
+
+/* =========================================================================  */
+/* Horizontal cards checkbox wrapper */
+/* =========================================================================  */
+
+.c-horizontal-card__checkbox {
+    transition: $bgco-transition;
+    padding: 0 1.5rem 0 2rem;
+    background-color: $white;
+    will-change: transform;
+    height: 4.6rem;
+    line-height: 4.6rem;
+}
+
+/* =========================================================================  */
+/* Horizontal cards label */
+/* =========================================================================  */
+
+.c-horizontal-card__label-badge {
+    margin-right: $spacing-s;
+}
+
+.c-horizontal-card.is-selected .c-horizontal-card__label-badge {
+    background-color: $light-purple;
+}
+
+.c-horizontal-card__label {
+    transition: transform .12s ease-in-out;
+    transform: translate(-2.4rem);
+    display: inline-block;
+}
+
+/* =========================================================================  */
+/* Horizontal cards priority */
+/* =========================================================================  */
+
+.c-horizontal-card__priority {
+    text-transform: uppercase;
+}
+
+/* =========================================================================  */
+/* Horizontal cards inner wrapper */
+/* =========================================================================  */
+
+.c-horizontal-card__data {
+    padding: 0;
+    margin: 0;
+    white-space: nowrap;
+    @include clearfix;
+    line-height: 2.8rem;
+    padding: 1rem 0;
+    width: 100%;
+}
+
+.c-horizontal-card__data-value {
+    float: left;
+    margin: 0;
+    width: calc(100% / #{$item-amount});
+    padding-left: 2rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.c-horizontal-card__data-group:last-child .c-horizontal-card__data-value {
+    text-align: right;
+}
+
+.c-horizontal-card__tag {
+    position: absolute;
+    right: 3rem;
+    list-style-type: none;
+
+    transition: $bgco-transition;
+}
+
+.c-horizontal-card.is-selected .c-horizontal-card__badge {
+    background-color: $light-purple;
+}
+
+/* =========================================================================  */
+/* More button */
+/* =========================================================================  */
+
+.c-horizontal-card__more-btn {
+    transition: opacity .12s ease-in-out;
+    opacity: 0;
+    position: absolute;
+    right: 0.9rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.c-horizontal-card:hover .c-horizontal-card__more-btn,
+.c-horizontal-card.is-selected .c-horizontal-card__more-btn,
+.c-horizontal-card__more-btn.has-popover-displayed {
+    opacity: 1;
+}
+
+.c-horizontal-card.is-selected .c-horizontal-card__more-btn:hover {
+    background-color: $light-purple;
+}
+
+/* =========================================================================  */
+/* Interaction: hover on labels parent element OR labels parent */
+/* has class is-selected */
+/* =========================================================================  */
+
+.c-horizontal-card:hover .c-horizontal-card__label,
+.c-horizontal-card.has-visible-checkbox .c-horizontal-card__label {
+    transform: translate(0);
+}
+
+/* =========================================================================  */
+/* Interaction: dynamically added class .is-selected */
+/* =========================================================================  */
+
+.c-horizontal-card.is-selected {
+    background-color: $primary-color-bg;
+}
+
+/* =========================================================================  */
+/* Interaction: checkbo xblock state with .is-selected on horizntal card */
+/* =========================================================================  */
+.c-horizontal-card.is-selected .c-horizontal-card__checkbox {
+    background-color: $primary-color-bg;
+}

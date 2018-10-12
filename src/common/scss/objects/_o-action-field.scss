@@ -1,0 +1,86 @@
+/* =========================================================================  */
+/* Object: Action field */
+/* =========================================================================  */
+
+.o-action-field {
+    display: flex;
+    flex: 1;
+}
+
+.o-action-field__button-wrapper {
+    position: relative;
+    width: 4.4rem;
+    border-radius: $border-radius 0 0 $border-radius;
+    background-color: $neutral-btn;
+}
+
+.o-action-field__input {
+    border-radius: 0 $border-radius $border-radius 0;
+    margin-left: -.2rem;
+    z-index: 1;
+}
+
+.o-action-field:not(.o-action-field--checkbox) .o-action-field__button-wrapper:hover + .o-action-field__input {
+    border-color: $neutral-btn-hover;
+    transition: border-color .1s ease-in-out;
+}
+
+/* =========================================================================  */
+/* Type: Checkbox */
+/* =========================================================================  */
+
+.o-action-field__button-wrapper .o-toggle__label:before {
+    position: absolute;
+    margin-right: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* =========================================================================  */
+/* Type: Popover */
+/* =========================================================================  */
+
+.o-action-field__button.o-btn {
+    height: 100%;
+    width: 4rem;
+    border-radius: $border-radius 0 0 $border-radius;
+}
+
+.o-action-field__popover .c-combo-field__field,
+.o-action-field__popover .c-combo-field__field:nth-child(n+2) {
+    margin-left: 0;
+}
+
+.o-action-field__popover {
+    position: absolute;
+    top: calc(100% - .5rem);
+    padding: 1.2rem 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    background-color: $white;
+    box-shadow: $shadow-no-offset;
+    border-radius: $border-radius;
+    white-space: nowrap;
+    border-radius: 0 $border-radius $border-radius 0;
+    display: none;
+    opacity: 0;
+    animation: fadeUp .05s ease-in-out forwards;
+}
+
+.o-action-field__popover.is-visible {
+    display: block;
+    animation: fadeUp .05s ease-in-out forwards;
+}
+
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(-50%, -20%);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}

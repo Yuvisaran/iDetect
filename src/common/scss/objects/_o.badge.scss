@@ -1,0 +1,19 @@
+/* =========================================================================  */
+/* Object: badge */
+/* =========================================================================  */
+
+.o-badge {
+    @include font('medium');
+    font-weight: $book;
+    color: $neutral-text-dark;
+    line-height: 1;
+    display: inline-block;
+    padding: .7rem 1rem;
+    background-color: $neutral-bg;
+    border-radius: $border-radius;
+}
+
+.o-badge--small {
+    @include font('x-small');
+    padding: .5rem .8rem;
+}

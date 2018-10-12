@@ -1,0 +1,114 @@
+/* =========================================================================  */
+/* Component:  */
+/* =========================================================================  */
+
+.c-row-card {
+    background-color: $white;
+    display: block;
+    margin-bottom: 1.8rem;
+    display: flex;
+    align-items: flex-start;
+    height: 6.3rem;
+    position: relative;
+    border-radius: $border-radius;
+    animation: fadeIn .3s ease-in-out forwards;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.c-row-card:hover .c-row-card__toggle-wrapper .o-icon {
+    opacity: 0;
+}
+
+.c-row-card:hover .c-row-card__toggle-wrapper .o-toggle {
+    opacity: 1;
+}
+
+.c-row-card__toggle-wrapper {
+    width: 5.5rem;
+    height: 100%;
+    background-color: $light-purple;
+    display: inline-block;
+    border-radius: $border-radius 0 0 $border-radius;
+    position: relative;
+}
+
+.c-row-card__toggle-wrapper .o-icon {
+    transition: opacity .08s ease-in-out;
+    fill: $primary-color;
+    width: 2.4rem;
+    height: 2.4rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 1.8rem;
+    max-height: 1.8rem;
+}
+
+.c-row-card__toggle-wrapper .o-toggle {
+    transition: opacity .08s ease-in-out;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.c-row-card__toggle-wrapper .o-toggle__label:before {
+    margin-right: 0;
+}
+
+.c-row-card__content {
+    display: inline-block;
+    padding: 1rem 1.5rem;
+}
+
+.c-row-card__name {
+    @include font('small');
+    color: $neutral-text;
+}
+
+.c-row-card__label {
+    @include font('medium');
+    color: $black;
+}
+
+.c-row-card__more-btn {
+    position: absolute;
+    top: 1rem;
+    right: 0.9rem;
+}
+
+.c-row-card__badge {
+    @include font('medium');
+    position: absolute;
+    right: 3rem;
+    top: 1rem;
+}
+
+.c-row-card__risk {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    flex-grow: 1;
+    padding-right: 1.5rem;
+}
+
+.c-row-card__risk .o-risk-allocation {
+    align-self: flex-end;
+
+    &:first-child {
+        margin-bottom: .8rem;
+    }
+}

@@ -1,0 +1,101 @@
+/* =========================================================================  */
+/* General styles for header elements */
+/* =========================================================================  */
+
+.d-sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    overflow: auto;
+    padding: 47px 40px;
+    width: $docs-nav;
+    background-color: $neutral-bg;
+}
+
+.d-sidebar__inner {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+/* =========================================================================  */
+/* Logo + version */
+/* =========================================================================  */
+
+.d-sidebar__brand {
+    font-size: 1.8rem;
+    text-decoration: none;
+    color: $primary-color;
+
+    &:hover {
+        color: $primary-color-hover;
+    }
+}
+
+.d-sidebar__version {
+    display: block;
+    float: right;
+}
+
+/* =========================================================================  */
+/* Side navigation */
+/* =========================================================================  */
+
+.d-sidebar__nav {
+    padding-top: 20px;
+    padding-bottom: 35px;
+    overflow-y: auto;
+}
+
+.d-sidebar__list {
+    padding-left: 0;
+    list-style-type: none;
+    margin-top: 15px;
+}
+
+.d-sidebar__list-item {
+    margin-bottom: 15px;
+}
+
+.d-sidebar__link {
+    color: $neutral-text-dark;
+    text-decoration: none;
+    transition: color 0.1s ease-in-out;
+    color: $neutral-text;
+
+    &.is-active {
+        color: $primary-color;
+    }
+
+    &:hover {
+        color: $black;
+    }
+}
+
+/* =========================================================================  */
+/* Side navigation - submenus */
+/* =========================================================================  */
+.d-sidebar__submenu {
+    margin-top: 15px;
+    list-style-type: none;
+    margin-left: 20px;
+    padding-left: 0px;
+}
+
+.d-sidebar__secondary-link {
+    @include font('large');
+    text-decoration: none;
+    transition: color 0.1s ease-in-out;
+    padding: 5px 0;
+    display: block;
+    color: $neutral-text;
+
+    &.is-active {
+        color: $primary-color;
+    }
+
+    &:hover {
+        color: $primary-color;
+    }
+}

@@ -1,0 +1,36 @@
+/* =========================================================================  */
+/* Comment box */
+/* =========================================================================  */
+
+.c-comment-box {
+    position: relative;
+    @include font('small');
+}
+
+.c-comment-box__placeholder {
+    position: absolute;
+    left: 1.7rem;
+    top: 1rem;
+    color: $neutral-text;
+    pointer-events: none;
+}
+
+.c-comment-box__placeholder.is-hidden {
+    display: none;
+}
+
+.c-comment-box__input {
+
+    &:focus,
+    [data-whatinput="keyboard"] &:focus {
+        box-shadow: none;
+    }
+}
+
+/* =========================================================================  */
+/* Modifier: large */
+/* =========================================================================  */
+
+.c-comment-box--large .c-comment-box__input {
+    height: 30rem;
+}

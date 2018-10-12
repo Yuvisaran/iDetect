@@ -1,0 +1,54 @@
+/* =========================================================================  */
+/* Pikaday */
+/* =========================================================================  */
+
+.pika-single {
+    border: 0.2rem solid $neutral-stroke;
+    border-radius: $border-radius;
+    @include font-family($main-font-type);
+    margin: $spacing-xxs 0;
+}
+
+.pika-single.is-bound {
+    box-shadow: none;
+}
+
+.pika-label {
+    font-weight: $medium;
+}
+
+.pika-table abbr {
+    text-decoration: none;
+}
+
+.pika-table th {
+    @include font('small');
+    font-weight: $medium;
+}
+
+.pika-button {
+    @include font('small');
+    text-align: center;
+}
+
+.pika-button:hover {
+    border-radius: $border-radius;
+}
+
+.is-selected .pika-button,
+.is-today .pika-button {
+    font-weight: $medium;
+}
+
+.pika-prev,
+.is-rtl .pika-next {
+    background-image: url('../../svg/caret-left.svg');
+    background-size: 0.6rem 0.9rem;
+}
+
+.pika-next,
+.is-rtl .pika-prev {
+    background-image: url('../../svg/caret-left.svg');
+    background-size: 0.6rem 0.9rem;
+    transform: rotate(180deg);
+}

@@ -1,0 +1,108 @@
+/* =========================================================================  */
+/* Object: toggle */
+/* =========================================================================  */
+
+.o-toggle {
+    color: $neutral-text;
+}
+
+/*
+ * 1. Original input is hidden away from viewport
+ */
+.o-toggle__checkbox {
+    position: absolute;
+    left: -9999px; /* [1] */
+}
+
+.o-toggle__label {
+    @include font('medium');
+    vertical-align: middle;
+    color: $neutral-text-dark;
+    display: block;
+}
+
+/*
+ * Label:before pseudo element serves as input.
+ */
+.o-toggle__label:before {
+    content: "";
+    transition: background .08s ease-in-out, border .08s ease-in-out;
+    border: .1rem solid $neutral-stroke-dark;
+    width: 1.4rem;
+    height: 1.4rem;
+    display: inline-block;
+    border-radius: $border-radius-small;
+    margin-right: $spacing-s;
+    background-position: center center;
+    position: relative;
+    top: .3rem;
+}
+
+/* =========================================================================  */
+/* Interaction: input checkbox */
+/* =========================================================================  */
+
+[data-whatintent="keyboard"] .o-toggle__checkbox:focus + .o-toggle__label:before {
+    outline: none;
+    @include focus-ring;
+}
+
+.o-toggle__checkbox.is-partially-checked + .o-toggle__label {
+    position: relative;
+}
+
+.o-toggle__checkbox.is-partially-checked + .o-toggle__label:before {
+    background-color: $primary-color;
+    border: 0.1rem solid $primary-color;
+}
+
+.o-toggle__checkbox.is-partially-checked + .o-toggle__label:after {
+    content: '';
+    display: block;
+    width: 0.8rem;
+    height: 0.2rem;
+    background-color: $white;
+    border-radius: 0.2rem;
+    position: absolute;
+    left: 0.4rem;
+    top: 1rem;
+}
+
+.o-toggle__checkbox:checked + .o-toggle__label:before {
+    background: $primary-color url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMTBweCIgaGVpZ2h0PSI4cHgiIHZpZXdCb3g9IjAgMCAxMCA4IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogICAgPCEtLSBHZW5lcmF0b3I6IFNrZXRjaCA0Ny4xICg0NTQyMikgLSBodHRwOi8vd3d3LmJvaGVtaWFuY29kaW5nLmNvbS9za2V0Y2ggLS0+CiAgICA8dGl0bGU+Y2hlY2staWNvbjwvdGl0bGU+CiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggU2tldGNoLjwvZGVzYz4KICAgIDxkZWZzPjwvZGVmcz4KICAgIDxnIGlkPSJQcm90b3R5cGUiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+CiAgICAgICAgPGcgaWQ9ImFsZXJ0c19tYWluLXZpZXdfYWN0aW9ucy1wYXJhbWV0ZXJzIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTIwNC4wMDAwMDAsIC0xMjYuMDAwMDAwKSIgc3Ryb2tlPSIjRkZGRkZGIiBzdHJva2Utd2lkdGg9IjIiPgogICAgICAgICAgICA8ZyBpZD0iR3JvdXAtMiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTE4My4wMDAwMDAsIDEwNi4wMDAwMDApIj4KICAgICAgICAgICAgICAgIDxnIGlkPSJHcm91cCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTkuMDAwMDAwLCAxNy4wMDAwMDApIj4KICAgICAgICAgICAgICAgICAgICA8cG9seWxpbmUgaWQ9ImNoZWNrLWljb24iIHRyYW5zZm9ybT0idHJhbnNsYXRlKDYuODg5MDg3LCA1Ljg4OTA4Nykgcm90YXRlKC00NS4wMDAwMDApIHRyYW5zbGF0ZSgtNi44ODkwODcsIC01Ljg4OTA4NykgIiBwb2ludHM9IjMuNjE3Mjk3MjcgMy44ODkwODczIDMuMzg5MDg3MyA3Ljg2MjUyNDA0IDEwLjM4OTA4NzMgNy44ODkwODczIj48L3BvbHlsaW5lPgogICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4=) no-repeat center center;
+    border: 0.1rem solid $primary-color;
+}
+
+/* =========================================================================  */
+/* Disabled checkbox */
+/* =========================================================================  */
+
+.o-toggle__checkbox[disabled] + .o-toggle__label {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* =========================================================================  */
+/* Scope: horizontal cards */
+/* =========================================================================  */
+
+.c-horizontal-card .o-toggle {
+    height: 0;
+    display: inline-block;
+}
+
+.c-horizontal-card .o-toggle__label {
+    transition: opacity .12s ease-in-out;
+    opacity: 0;
+    vertical-align: initial;
+}
+
+/* =========================================================================  */
+/* Scope + Interaction: Specific to horizontal cards */
+/* =========================================================================  */
+
+.c-horizontal-card .o-toggle__checkbox:checked + .o-toggle__label,
+.c-horizontal-card:hover .o-toggle__label,
+.c-horizontal-card.has-visible-checkbox .o-toggle__label {
+    opacity: 1;
+}

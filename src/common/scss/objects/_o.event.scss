@@ -1,0 +1,43 @@
+/* =========================================================================  */
+/* Object: event */
+/* =========================================================================  */
+
+.o-event {
+    color: $neutral-text;
+}
+
+.o-event__trigger,
+.o-event__action {
+    display: block;
+}
+
+.o-event__trigger {
+    @include font('small');
+}
+
+.o-event__action {
+    @include font('medium');
+    color: $neutral-text-dark;
+}
+
+.o-event__time {
+    @include font('x-small');
+}
+
+/* =========================================================================  */
+/* Modifier: card */
+/* =========================================================================  */
+
+.o-event--card {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+}
+
+.o-event--card .o-event__meta {
+    flex-basis: 80%;
+}
+
+.o-event--card .o-event__time {
+    text-align: right;
+}

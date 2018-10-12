@@ -1,0 +1,23 @@
+.c-sidebar__tabs {
+    width: 100%;
+    font-size: 1.4rem;
+    padding-top: .6rem;
+}
+
+.c-sidebar__tabs .c-tabs__link {
+    padding: 1.4rem;
+}
+
+.c-sidebar__tabs .c-tabs__title:nth-child(n+2) .c-tabs__link {
+    margin: 0;
+}
+
+.c-sidebar__tabs .c-tabs__item {
+    padding: 2rem;
+}
+
+.c-sidebar__tabs .c-tabs__list {
+    padding: 0 1.5rem;
+    display: flex;
+    justify-content: space-between;
+}

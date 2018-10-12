@@ -1,0 +1,25 @@
+.c-comment {
+    margin-bottom: 30px;
+}
+
+.c-comment__date {
+    @include font('xx-small');
+    color: $neutral-text;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.c-comment__content {
+    color: $neutral-text-dark;
+    @include font('medium');
+    max-width: 450px;
+}
+
+.c-comment__author {
+    @include font('small');
+    margin-top: 8px;
+}
+
+.c-comment__author--alternate {
+    color: $risk-severe;
+}

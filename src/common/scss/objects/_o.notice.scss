@@ -1,0 +1,55 @@
+/* =========================================================================  */
+/* Component parameters */
+/* =========================================================================  */
+
+$notice-padding: $text-box-v-spacing $text-box-h-spacing;
+
+/* =========================================================================  */
+/* Object: notice */
+/* =========================================================================  */
+
+.o-notice {
+    @include font('medium');
+    border-radius: $border-radius;
+    text-align: center;
+    padding: 1.2rem 1.5rem;
+    color: $primary-color;
+    background-color: $primary-color-bg;
+}
+
+/* =========================================================================  */
+/* Modifier: large text */
+/* =========================================================================  */
+
+.o-notice--small {
+    @include font('small');
+    padding: $notice-padding;
+}
+
+/* =========================================================================  */
+/* Modifier: primary color */
+/* =========================================================================  */
+
+.o-notice--neutral {
+    color: $black;
+    background-color: transparent;
+}
+
+/* =========================================================================  */
+/* Modifier: btn */
+/* =========================================================================  */
+
+.o-notice--btn {
+    @include font-family($main-font-type);
+    font-weight: $medium;
+    @include font('medium');
+    line-height: (22/14);
+    border: 0;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color .1s ease-in-out;
+
+    &:hover {
+        background-color: $primary-color-bg-hover;
+    }
+}

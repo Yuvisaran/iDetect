@@ -1,0 +1,37 @@
+/* =========================================================================  */
+/* Combo field */
+/* =========================================================================  */
+
+.c-combo-field {
+    display: flex;
+}
+
+.c-combo-field__field {
+    max-width: 50%;
+}
+
+.c-combo-field__field:nth-child(n+2) {
+    margin-left: $base-spacing;
+}
+
+.c-combo-field .c-form__field,
+.c-combo-field .c-form__field:nth-child(n+2) {
+    margin-top: 0;
+    margin-left: $base-spacing;
+}
+
+/* =========================================================================  */
+/* Modifier: 1/5 field repartition */
+/* =========================================================================  */
+
+.c-combo-field--onefifth .c-combo-field__field {
+    max-width: 100%;
+}
+
+.c-combo-field--onefifth .c-form__field:nth-child(n+2) {
+    width: 5.5rem;
+
+    .o-input {
+        padding: .8rem .6rem;
+    }
+}

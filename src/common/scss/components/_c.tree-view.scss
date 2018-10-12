@@ -1,0 +1,121 @@
+.c-tree-view + .c-tree-view__item {
+    padding-left: 16px;
+    list-style-type: none;
+}
+
+.c-tree-view {
+    padding-left: 0;
+    color: #eee;
+    min-width: 100%;
+    overflow-y: auto;
+    margin-bottom: 0;
+}
+
+.c-main-nav__submenu .c-explorer-header + .c-tree-view {
+    margin-top: 1.5rem;
+}
+
+.c-tree-view__item {
+    color: #eee;
+    list-style: none;
+    position: relative;
+}
+
+.c-tree-view__btn {
+    @include font('small');
+    appearance: none;
+    border: 0;
+    background-color: transparent;
+    color: $neutral-text;
+    padding: .8rem;
+    width: 100%;
+    border-radius: $border-radius-small;
+    position: relative;
+    text-align: left;
+    cursor: pointer;
+
+    [data-whatintent="keyboard"] &:focus {
+        outline: none;
+        @include focus-ring;
+    }
+
+    [data-whatintent="mouse"] &:focus {
+        outline: none;
+    }
+
+    &.is-active {
+        background-color: $primary-color-bg;
+        color: $primary-color;
+    }
+}
+
+.c-tree-view__item--expandable.is-visible > .c-tree-view__btn--expandable .c-tree-view__arrow {
+    transform: rotate(0deg);
+}
+
+.c-tree-view__item--expandable .c-tree-view__item {
+    padding-left: 20px;
+}
+
+.c-tree-view__btn--expandable + .c-tree-view {
+    transition: max-height .2s ease-in-out;
+    padding-left: 3px;
+    max-height: 0;
+    overflow: hidden;
+
+    &.is-visible {
+        max-height: 1000px;
+    }
+}
+
+.c-tree-view__icon {
+    display: inline-block;
+    vertical-align: text-top;
+    margin-right: 5px;
+}
+
+.c-tree-view__arrow {
+    transition: transform .1s ease-in-out;
+    display: inline-block;
+    vertical-align: initial;
+    margin-right: 4px;
+    height: 7px;
+    transform: rotate(-90deg);
+    top: -1px;
+    position: relative;
+}
+
+.c-tree-view__number {
+    float: right;
+    margin-left: 30px;
+}
+
+.c-tree-view__more-btn {
+    transition: opacity .08s ease-in-out;
+    position: absolute;
+    right: .5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    cursor: pointer;
+}
+
+.c-tree-view__more-btn.has-popover-displayed {
+    opacity: 1;
+    color: $neutral-text;
+    background-color: $neutral-bg;
+}
+
+.c-tree-view__btn--more-btn:hover .c-tree-view__number {
+    opacity: 0;
+}
+
+.c-tree-view__btn--more-btn:hover .c-tree-view__more-btn {
+    opacity: 1;
+}
+
+.c-tree-view__btn.is-active .c-tree-view__more-btn:hover,
+.c-tree-view__btn.is-active .c-tree-view__more-btn.has-popover-displayed {
+    color: $primary-color;
+    background-color: $primary-color-bg-hover;
+}

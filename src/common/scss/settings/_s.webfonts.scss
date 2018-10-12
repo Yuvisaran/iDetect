@@ -1,0 +1,30 @@
+/* =========================================================================  */
+/* Webfonts */
+/* =========================================================================  */
+
+@font-face {
+    font-family: 'Maison Neue';
+    src:    url("../../fonts/maisonneue/medium/maisonneue-medium.woff2") format("woff2"),
+            url("../../fonts/maisonneue/medium/maisonneue-medium.woff") format("woff");
+
+    font-style:   normal;
+    font-weight:  $medium;
+}
+
+@font-face {
+    font-family: 'Maison Neue';
+    src:    url("../../fonts/maisonneue/book/maisonneue-book.woff2") format("woff2"),
+            url("../../fonts/maisonneue/book/maisonneue-book.woff") format("woff");
+
+    font-style:   normal;
+    font-weight:  $book;
+}
+
+@font-face {
+    font-family: 'Maison Neue Mono';
+    src:    url("../../fonts/maisonneue/mono/maisonneue-mono.woff2") format("woff2"),
+            url("../../fonts/maisonneue/mono/maisonneue-mono.woff") format("woff");
+
+    font-style:   normal;
+    font-weight:  $book;
+}

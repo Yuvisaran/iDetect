@@ -1,0 +1,21 @@
+/* =========================================================================  */
+/* Initials */
+/* =========================================================================  */
+
+.o-initials {
+    width: 4.6rem;
+    height: 4.6rem;
+    border-radius: 50%;
+    background-color: $neutral-bg;
+    appearance: none;
+    border: none;
+    position: relative;
+}
+
+.o-initials__text {
+    text-transform: uppercase;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}

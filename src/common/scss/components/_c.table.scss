@@ -1,0 +1,175 @@
+/* =========================================================================  */
+/* Component: table */
+/* =========================================================================  */
+
+.c-table {
+    border-collapse: collapse;
+    min-width: 100%;
+    animation: fadeIn .3s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* =========================================================================  */
+/* Component: table head */
+/* =========================================================================  */
+
+.c-table__head {
+    background-color: $neutral-btn;
+    text-transform: uppercase;
+}
+
+/* =========================================================================  */
+/* Component: table cells */
+/* =========================================================================  */
+
+.c-table__head-data--sortable {
+    cursor: pointer;
+}
+
+.c-table__sort {
+    display: inline-block;
+    margin-left: 0.3rem;
+    position: relative;
+    top: 0.2rem;
+    overflow: hidden;
+}
+
+.c-table__sort-icon {
+    display: block;
+    width: 0.7rem;
+    height: 1.3rem;
+}
+
+.is-asc .c-table__sort,
+.is-desc .c-table__sort {
+    height: 0.5rem;
+    position: relative;
+    top: -0.3rem;
+}
+
+.is-asc .c-table__sort-icon {
+    position: relative;
+    top: -0.7rem;
+}
+
+.c-table__head-data,
+.c-table__data {
+    padding: .9rem 1.2rem;
+    font-weight: 400;
+    @include font('medium');
+    color: $neutral-text;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.c-table__data {
+    color: $neutral-text-dark;
+    border-bottom: 1px solid $neutral-3;
+    padding-right: 9rem;
+}
+
+.c-table__data.is-editable {
+    position: relative;
+}
+
+.c-table__data.is-editable:before {
+    content: '';
+    display: block;
+    width: calc(100% - 1.2rem);
+    height: calc(100% - 1.2rem);
+    position: absolute;
+    left: 0.6rem;
+    top: 0.6rem;
+    background-color: $white;
+    border-radius: $border-radius;
+    z-index: -1;
+}
+
+.c-table__editable {
+    position: relative;
+    z-index: 1;
+    cursor: text;
+    outline: none;
+}
+
+.c-table__data--risk {
+    padding-right: 1.2rem;
+}
+
+.c-table__row .c-table__data:not(.c-table__data--action):nth-of-type(1) {
+    padding-left: 0;
+}
+
+/* =========================================================================  */
+/* Modifier: popover buttons cells */
+/* =========================================================================  */
+
+.c-table__more-btn-column {
+    width: 2.5rem;
+}
+
+.c-table__data--action {
+    border-bottom: 0;
+    padding: .9rem .8rem;
+}
+
+.c-table__more-btn {
+    transition: opacity .08s ease-in-out;
+    opacity: 0;
+    vertical-align: middle;
+}
+
+.c-table__more-btn:hover,
+.c-table__more-btn.has-popover-displayed {
+    background-color: $neutral-4;
+}
+
+.c-table__data--action .o-more-btn:focus {
+    opacity: 1;
+}
+
+.c-table__row:hover .c-table__data--action .o-more-btn {
+    opacity: 1;
+}
+
+/* =========================================================================  */
+/* Modiifer: numbered cells */
+/* =========================================================================  */
+
+.c-table__data--index {
+    padding-left: 0;
+    padding-right: 1.3rem;
+}
+
+/* =========================================================================  */
+/* Modifier: table body with background */
+/* =========================================================================  */
+
+.c-table--bg .c-table__body {
+    background-color: $neutral-bg-light;
+}
+
+/* =========================================================================  */
+/* Modifier: table wrapper (param: isScrollable) */
+/* =========================================================================  */
+
+.c-table__wrapper {
+    white-space: nowrap;
+    overflow: scroll;
+}
+
+/* =========================================================================  */
+/* Scope: table in modal (needs scrollable wrapper) */
+/* =========================================================================  */
+
+.c-modal__body .c-table__wrapper {
+    max-height: 28rem;
+}

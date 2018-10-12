@@ -1,0 +1,71 @@
+/* =========================================================================  */
+/* Object: attribute */
+/* =========================================================================  */
+
+.o-attribute {
+    font-weight: $book;
+    line-height: 1.15;
+    display: block;
+    @include well;
+    margin: 0;
+    position: relative;
+}
+
+.o-attribute__term {
+    @include font('small');
+    color: $neutral-text-dark;
+}
+
+.o-attribute__value {
+    @include font('x-small');
+    line-height: 1.4;
+    color: $neutral-text;
+    margin: 0.6rem 0 0;
+}
+
+.o-attribute__all {
+    margin-top: $spacing-xs;
+}
+
+/* =========================================================================  */
+/* Modifier: inline */
+/* =========================================================================  */
+
+.o-attribute--inline {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: $spacing-s;
+    line-height: 1rem;
+}
+
+.o-attribute--inline .o-attribute__value {
+    margin: 0;
+    line-height: inherit;
+}
+
+/* =========================================================================  */
+/* Modifier: note */
+/* =========================================================================  */
+
+.o-attribute--note {
+    background-color: $light-green;
+}
+
+/* =========================================================================  */
+/* Modifier: more button */
+/* =========================================================================  */
+
+.o-attribute--more {
+    padding-right: 4.8rem;
+}
+
+.o-attribute .o-attribute__more-btn {
+    position: absolute;
+    right: 1rem;
+    z-index: 1;
+}
+
+.o-attribute .o-attribute__more-btn:hover {
+    background-color: $neutral-4;
+}

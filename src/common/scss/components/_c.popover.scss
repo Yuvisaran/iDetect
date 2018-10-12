@@ -1,0 +1,61 @@
+.c-popover {
+    z-index: $z-popover;
+    @include floating-element;
+    padding: 1rem 2rem;
+    text-align: left;
+    min-width: 20rem;
+}
+
+.c-popover.is-hidden {
+    display: none;
+}
+
+.c-popover.is-ready {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.c-popover__heading {
+    margin-bottom: 1rem;
+}
+
+.c-popover__footer {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.c-popover__secondary-actions {
+    padding-right: $spacing-m;
+}
+
+.c-popover__secondary-actions + .c-popover__primary-actions {
+    padding-left: $spacing-m;
+}
+
+/* =========================================================================  */
+/* Modifier: no padding */
+/* =========================================================================  */
+
+.c-popover--no-padding {
+    padding: 0;
+}
+
+.c-popover--no-padding .c-popover__heading {
+    padding: 1rem 2rem 0;
+}
+
+/* =========================================================================  */
+/* Various sizes */
+/* =========================================================================  */
+
+.c-popover--small {
+    width: 20rem;
+}
+.c-popover--medium {
+    width: 34rem;
+}
+.c-popover--large {
+    width: 50rem;
+}

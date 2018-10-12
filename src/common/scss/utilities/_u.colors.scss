@@ -1,0 +1,96 @@
+/* =========================================================================  */
+/* Colors */
+/* =========================================================================  */
+
+.u-text-neutral {
+    color: $neutral-text;
+}
+
+.u-text-neutral--dark {
+    color: $neutral-text-dark;
+}
+
+.u-accent-color {
+    color: $primary-color;
+}
+
+button.u-accent-color:hover {
+    color: $primary-color-hover;
+}
+
+.u-destructive-color {
+    color: $negative-text;
+}
+
+button.u-destructive-color:hover {
+    color: $negative-text;
+}
+
+.u-text-black {
+    color: $black;
+}
+
+button.u-text-black:hover {
+    color: $black;
+}
+
+.u-attention-required,
+.u-attention-required * {
+    color: $negative-text;
+    background-color: $negative-bg;
+}
+
+button.u-attention-required,
+button.u-attention-required {
+
+    &:hover,
+    &:focus {
+        background-color: $negative-bg-hover;
+    }
+}
+
+.u-positive,
+.u-positive * {
+    color: $positive-text;
+    background-color: $positive-bg;
+}
+
+.u-positive-bg {
+    background-color: $positive-bg;
+}
+
+.u-negative,
+.u-negative * {
+    color: $negative-text;
+    background-color: $negative-bg;
+}
+
+.u-primary,
+.u-primary * {
+    color: $primary-color;
+    background-color: $primary-color-bg;
+}
+
+.u-white,
+.u-white * {
+    color: $neutral-text;
+    background-color: $white;
+}
+
+/* =========================================================================  */
+/* Background colors */
+/* =========================================================================  */
+
+.u-bg-green {
+    color: $white;
+    background-color: $green;
+}
+
+.u-bg-purple {
+    color: $white;
+    background-color: $purple;
+}
+
+.u-bg-transparent {
+    background-color: transparent;
+}

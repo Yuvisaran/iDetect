@@ -1,0 +1,38 @@
+
+.c-day-selector {
+    @include font('small');
+    border: 1px solid $neutral-stroke;
+    border-radius: $border-radius;
+    position: relative;
+    padding: 15px;
+}
+
+.c-day-selector__number-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.c-day-selector__number {
+    width: calc(100% / 7);
+    display: inherit;
+}
+
+.c-day-selector__label {
+    transition: background-color .08s ease-in-out, color .08s ease-in-out;
+    padding: 3px;
+    min-width: 26px;
+    min-height: 26px;
+    cursor: pointer;
+    display: inline-block;
+    line-height: 19px;
+    border-radius: $border-radius;
+    text-align: center;
+    color: $neutral-text;
+    margin: 0 auto 4px auto;
+}
+
+.c-day-selector__checkbox:checked + .c-day-selector__label {
+    background-color: $primary-color;
+    color: $white;
+}

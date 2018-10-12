@@ -1,0 +1,81 @@
+/* =========================================================================  */
+/* Component: radio button */
+/* =========================================================================  */
+
+$radio-top-spacing: .4rem;
+
+.o-radio-button {
+    @include font('medium');
+    vertical-align: middle;
+    position: relative;
+    padding-left: 2.4rem;
+}
+
+/*
+ * 1. Hides the native radio button input.
+ * 2. Replace native input by styled one.
+ */
+.o-radio-button__input { /* [1] */
+    left: -9000px;
+    position: absolute;
+}
+
+.o-radio-button__label {
+    @include font('medium');
+    color: $neutral-text-dark;
+}
+
+.o-radio-button__label:before { /* [2] */
+    content: "";
+    height: 1.2rem;
+    width: 1.2rem;
+    position: absolute;
+    background-color: $white;
+    border: .1rem solid $neutral-stroke-dark;
+    display: inline-block;
+    border-radius: 50%;
+    margin-right: 1rem;
+    top: $radio-top-spacing;
+    left: 0;
+}
+
+/* =========================================================================  */
+/* State: focused */
+/* =========================================================================  */
+
+.o-radio-button__input {
+    [data-whatintent="keyboard"] &:focus {
+        & + .o-radio-button__label {
+            outline: none;
+            @include focus-ring-border(2px);
+        }
+    }
+
+    [data-whatintent="mouse"] &:focus {
+        & + .o-radio-button__label {
+            outline: none;
+        }
+    }
+}
+
+/* =========================================================================  */
+/* State: selected or checked */
+/* =========================================================================  */
+
+.o-radio-button__input:checked + .o-radio-button__label:after {
+    content: "";
+    height: .6rem;
+    width: .6rem;
+    position: absolute;
+    background-color: $white;
+    display: inline-block;
+    border-radius: 50%;
+    margin-right: 1rem;
+    top: calc(.4rem + #{$radio-top-spacing});
+    left: .4rem;
+}
+
+.o-radio-button__input:checked + .o-radio-button__label:before {
+    background-color: $primary-color;
+    border: .1rem solid $primary-color;
+}

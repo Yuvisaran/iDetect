@@ -1,0 +1,183 @@
+/* ========================================================================= */
+/* Component: Entity */
+/* ========================================================================= */
+
+.c-entity {
+    background-color: $neutral-bg;
+    border-radius: .2rem;
+    padding: 1.1rem 4rem 1.1rem 1.1rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+    line-height: 1em;
+    transition: transform .08s ease-in-out, box-shadow .08s ease-in-out;
+    color: $neutral-text-dark;
+}
+
+.c-entity__icon,
+.c-entity__title,
+.c-entity__more-btn {
+    display: inline-block;
+}
+
+/* ========================================================================= */
+/* Entity icon */
+/* ========================================================================= */
+
+.c-entity__icon {
+    color: $primary-color;
+    margin-right: 0.8rem;
+}
+
+.c-entity__label {
+    @include font('small');
+}
+
+.c-entity__type {
+    @include font('x-small');
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $neutral-text;
+}
+
+.c-entity__controls {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* ========================================================================= */
+/* Entity more button */
+/* ========================================================================= */
+
+.c-entity__wrapper {
+    position: relative;
+}
+
+.c-entity__wrapper .c-entity__more-btn {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.c-entity__more-btn {
+    vertical-align: middle;
+}
+
+.c-entity__handle {
+    width: 30px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    cursor: ns-resize;
+
+}
+
+.c-entity__drag {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    fill: $neutral-text;
+    pointer-events: none;
+}
+
+/* =========================================================================  */
+/* Modifier: button */
+/* =========================================================================  */
+
+.c-entity--btn {
+    appearance: none;
+    border: 0;
+    width: 100%;
+    @include font-family($main-font-type);
+    cursor: pointer;
+
+    [data-whatintent="keyboard"] &:focus {
+        outline: none;
+        @include focus-ring;
+    }
+
+    [data-whatintent="mouse"] &:focus {
+        outline: none;
+    }
+
+    &:hover {
+        background-color: $neutral-4;
+    }
+}
+
+/* =========================================================================  */
+/* Modifier: With type declared */
+/* =========================================================================  */
+
+.c-entity--large {
+    padding: 2.2rem;
+    background-color: $primary-color-bg;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.c-entity--large.c-entity--btn:hover {
+    background-color: $primary-color-bg-hover;
+}
+
+.c-entity--large .c-entity__icon .o-icon {
+    max-width: 2.5rem;
+    max-height: 2.5rem;
+}
+
+.c-entity--large .c-entity__label {
+    @include font('large');
+    color: $neutral-text-dark;
+}
+
+.c-entity--large .c-entity__type {
+    @include font('medium');
+    color: $neutral-text;
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
+    margin-top: $spacing-xxs;
+}
+
+/* =========================================================================  */
+/* Modifier: is draggable */
+/* =========================================================================  */
+
+.c-entity--draggable {
+    padding-left: 30px;
+}
+
+.c-entity.gu-transit {
+    transform: scale(1.02);
+    box-shadow: $shadow-no-offset;
+}
+
+/* =========================================================================  */
+/* Modifier: negative */
+/* =========================================================================  */
+
+.c-entity--negative .o-icon {
+    fill: $negative-text;
+}
+
+/* =========================================================================  */
+/* Modifier: file */
+/* =========================================================================  */
+
+.c-entity--file {
+    @include font('x-small');
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+}
+
+.c-entity--file .c-entity__icon {
+    color: inherit;
+}

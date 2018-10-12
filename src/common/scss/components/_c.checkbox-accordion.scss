@@ -1,0 +1,51 @@
+/* =========================================================================  */
+/* Component: Checkbox accordion */
+/* =========================================================================  */
+
+.c-checkbox-accordion__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid $neutral-stroke;
+    padding: 1rem 0 1rem 1rem;
+    margin-bottom: 1.5rem;
+    cursor: pointer;
+}
+
+.c-checkbox-accordion__primary-checkbox {
+    display: inline-block;
+}
+
+.c-checkbox-accordion__actions {
+    display: flex;
+    align-items: center;
+    color: $neutral-text;
+}
+
+.c-checkbox-accordion__arrow {
+    transition: transform .08s ease-in-out;
+    width: 12px;
+    margin-left: 10px;
+}
+
+.c-checkbox-accordion__components {
+    transition: max-height .12s ease-in-out;
+    max-height: 0;
+    overflow: hidden;
+}
+
+.c-checkbox-accordion__component {
+    margin-bottom: 1rem;
+}
+
+/* =========================================================================  */
+/* States: is open */
+/* =========================================================================  */
+
+.c-checkbox-accordion.is-open .c-checkbox-accordion__arrow {
+    transform: rotate(90deg);
+}
+
+.c-checkbox-accordion.is-open .c-checkbox-accordion__components {
+    max-height: 1000px;
+}

@@ -1,0 +1,101 @@
+/* =========================================================================  */
+/* List */
+/* =========================================================================  */
+
+.d-list {
+    @include list-reset;
+}
+
+.d-list--icons {
+    @include clearfix;
+}
+
+.d-list--icons .d-list__item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.4rem;
+    height: 2.4rem;
+    float: left;
+    margin-right: 1.5rem;
+    background-color: $white;
+    box-shadow: 0 0 0.3rem 0 rgba($black, 0.3);
+    color: $primary-color;
+}
+
+.d-list--icons .d-list__item:nth-child(8n) {
+    margin-right: 0;
+}
+
+.d-list--icons .d-list__item:nth-child(8n+1) {
+    clear: left;
+}
+
+.d-list--icons .d-list__item:nth-child(n+9) {
+    margin-top: 2rem;
+}
+
+.d-list--icons-medium .d-list__item {
+    width: 3.2rem;
+    height: 3.2rem;
+}
+
+/* =========================================================================  */
+/* Relations */
+/* =========================================================================  */
+
+.d-list--icons-relation .d-list__item {
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 50%;
+    color: $white;
+    background-color: $primary-color;
+    box-shadow: none;
+}
+
+.d-list--icons-relation .d-list__item--new {
+    color: $black;
+    background-color: $neutral-3;
+}
+
+/* =========================================================================  */
+/* Linkchart */
+/* =========================================================================  */
+
+.d-list--icons-linkchart .d-list__item {
+    width: 8.6rem;
+    height: 8.6rem;
+    border-radius: 50%;
+    color: $white;
+    background-color: $primary-color;
+    box-shadow: none;
+}
+
+.d-list--icons-linkchart .d-list__item--new {
+    color: $black;
+    background-color: $neutral-3;
+}
+
+.d-list--icons-linkchart .d-list__item:nth-child(8n) {
+    margin-right: 1.5rem;
+}
+
+.d-list--icons-linkchart .d-list__item:nth-child(5n) {
+    margin-right: 0;
+}
+
+.d-list--icons-linkchart .d-list__item:nth-child(8n+1) {
+    clear: none;
+}
+
+.d-list--icons-linkchart .d-list__item:nth-child(5n+1) {
+    clear: left;
+}
+
+.d-list--icons-linkchart .d-list__item:nth-child(n+9) {
+    margin-top: 0;
+}
+
+.d-list--icons-linkchart .d-list__item:nth-child(n+6) {
+    margin-top: 1.5rem;
+}

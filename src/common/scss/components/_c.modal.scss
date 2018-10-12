@@ -1,0 +1,165 @@
+/* ======================================================= */
+/* Component: Modal */
+/* ======================================================= */
+
+/**
+ * 1. Required to hide the extra views.
+ */
+.c-modal {
+    width: 50rem;
+    border-radius: $border-radius-large;
+    background-color: $white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    z-index: $z-modal;
+    opacity: 1;
+    transition: opacity 0.1s ease-out, transform 0.1s ease-out, height 0.2s ease-out, width 0.2s ease-out;
+    overflow: hidden; /* [1] */
+}
+
+/* =========================================================================  */
+/* Docs only */
+/* =========================================================================  */
+
+/**
+ * 1. Relative rather than static as we need to position the views.
+ */
+.c-modal.is-static {
+    position: relative; /* [1] */
+    left: auto;
+    top: auto;
+    transform: none;
+}
+
+/* =========================================================================  */
+/* States */
+/* =========================================================================  */
+
+.c-modal.is-hidden {
+    transform: translate(-50%, -50%) scale(0.98);
+    transition-timing-function: ease-in;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.c-modal.is-static.is-hidden {
+    transform: scale(0.98);
+}
+
+.c-modal.is-maximized {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transform: none;
+    border-radius: 0;
+}
+
+.c-modal.is-transitioning {
+    transition: none;
+}
+
+/* ======================================================= */
+/* Modal inner composing blocks styles */
+/* ======================================================= */
+
+.c-modal__view {
+    transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+}
+
+.c-modal__view.is-hidden {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    transform: translateX(3rem);
+    pointer-events: none;
+    opacity: 0;
+}
+
+.c-modal__view.is-pushed-out {
+    transform: translateX(-3rem);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.c-modal__head,
+.c-modal__foot {
+    padding: $modal-padding;
+    width: 100%;
+}
+
+.c-modal__back {
+    position: relative;
+    top: -0.1rem;
+    margin-left: -0.8rem;
+}
+
+.c-modal__title {
+    @include font('large');
+    margin: 0;
+    flex: 1;
+}
+
+.c-modal__maximize {
+    top: -1.2rem;
+    right: -1.2rem;
+}
+
+.c-modal__body {
+    padding: $modal-body-padding;
+    @include font('medium');
+    line-height: (18/13);
+}
+
+.c-modal__body > * + *,
+.c-modal__body .js-scroll-box-content > * + * {
+    margin-top: $spacing-l;
+}
+
+.c-modal__body > p {
+    color: $neutral-text;
+}
+
+.c-modal__body--scrollable {
+    padding: 0;
+}
+
+.c-modal__head {
+    display: flex;
+    align-items: center;
+    color: $neutral-text-dark;
+}
+
+.c-modal__foot {
+    display: flex;
+    justify-content: space-between;
+    padding-top: $modal-padding * 1.25;
+}
+
+.c-modal__foot--primary-only {
+    flex-direction: row-reverse;
+}
+
+.c-modal__actions .o-btn:nth-child(n+2) {
+    margin-left: 1rem;
+}
+
+/* =========================================================================  */
+/* Modifier: small */
+/* =========================================================================  */
+
+.c-modal--small {
+    width: 38rem;
+}
+
+/* =========================================================================  */
+/* Modifier: large */
+/* =========================================================================  */
+
+.c-modal--large {
+    width: 98rem;
+}

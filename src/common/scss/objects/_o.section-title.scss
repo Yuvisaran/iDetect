@@ -1,0 +1,8 @@
+.o-section-title {
+    @include font('medium');
+    color: $neutral-text;
+    width: 100%;
+    padding: 15px 0;
+    border-bottom: 1px solid $neutral-stroke;
+    margin: 15px 0 20px;
+}

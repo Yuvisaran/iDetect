@@ -1,0 +1,62 @@
+/* =========================================================================  */
+/* Component: progress loader */
+/* =========================================================================  */
+
+.o-loader {
+    transition: opacity .08s linear;
+    content: "";
+    height: .3rem;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: $primary-color;
+    opacity: 0;
+    z-index: 9999;
+    transform-origin: left top;
+}
+
+/* =========================================================================  */
+/* Interaction: loading state */
+/* =========================================================================  */
+
+.o-loader.is-loading {
+    opacity: 1;
+    animation: fakeProgress .6s ease-in-out forwards;
+}
+
+.o-loader--infinite.is-loading {
+    animation: infiniteLoader 1.4s $easeInOutCubic infinite;
+}
+
+@keyframes infiniteLoader {
+    0% {
+        transform: scale(0, 1);
+    }
+    49.999% {
+        transform-origin: left top;
+    }
+    50% {
+        transform: scale(1, 1);
+        transform-origin: right top;
+    }
+    100% {
+        transform: scale(0, 1);
+        transform-origin: right top;
+    }
+}
+
+@keyframes fakeProgress {
+    0% {
+        width: 0%;
+    }
+    50% {
+        width: 30%;
+    }
+    70% {
+        width: 50%;
+    }
+    100% {
+        width: 100%;
+    }
+}

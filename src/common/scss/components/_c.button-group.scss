@@ -1,0 +1,45 @@
+/* =========================================================================  */
+/* Component: Button group */
+/* =========================================================================  */
+
+.c-button-group {
+    padding-left: 0;
+    list-style-type: none;
+    display: inline-block;
+    margin: $spacing-m 0;
+}
+
+.c-button-group__item {
+    display: inline-block;
+    margin-right: $spacing-m;
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+/* =========================================================================  */
+/* Modifier: List item containing only text */
+/* =========================================================================  */
+
+.c-button-group__item--text {
+    @include font('medium');
+    color: $neutral-text;
+}
+
+/* =========================================================================  */
+/* Modifier: Group that is hdden by default */
+/* =========================================================================  */
+
+.c-button-group--will-hide {
+    transition: opacity .05s ease-in-out;
+    opacity: 0;
+}
+
+/* =========================================================================  */
+/* Interaction: has class is-visible */
+/* =========================================================================  */
+
+.c-button-group--will-hide.is-visible {
+    opacity: 1;
+}

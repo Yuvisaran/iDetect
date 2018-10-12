@@ -1,0 +1,146 @@
+/* =========================================================================  */
+/* Typography */
+/* =========================================================================  */
+
+/**
+ * Outputs all properties and values for each breakpoint in a given font map.
+ *
+ * @param {String} $font-map-key - the key to a font map in $fonts.
+ *
+ * @requires @mixin `responsive`.
+ * @requires @mixin `font-family`.
+ * @requires @variable $fonts.
+ */
+ @mixin font($font-map-key) {
+    $font-map: map-get($fonts, $font-map-key);
+
+    @each $property, $value in $font-map {
+
+        @if( $property == 'font-family' ) {
+            @include font-family($value);
+        } @else {
+            #{$property}: $value;
+        }
+    }
+}
+
+/**
+ * Outputs the font-family rule with the fallbak to start with and the webfont
+ * once loaded.
+ *
+ * @param {String} $type - the type of font.
+ *
+ * @requires @variable $sans-serif
+ */
+ @mixin font-family($type) {
+    @if $type == 'sans-serif' or $type == 'sans' {
+        font-family: $sans-serif;
+    }
+}
+
+/* =========================================================================  */
+/* Layout */
+/* =========================================================================  */
+
+/**
+ * Clears floating children elements.
+ */
+@mixin clearfix {
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+}
+
+/* =========================================================================  */
+/* Interactions */
+/* =========================================================================  */
+
+@mixin focus-ring {
+    border-radius: $border-radius;
+    box-shadow: 0 0 0 0.3rem $focus-ring;
+}
+
+@mixin focus-ring-border($width: 0.3rem) {
+    border-radius: $border-radius;
+    border: $width solid $focus-ring;
+}
+
+@mixin bg-shadow($position: top, $stateClass: '.is-scrolled') {
+    &:after {
+        content: "";
+        left: 0;
+        width: 100%;
+        height: 0.6rem;
+        position: absolute;
+        z-index: 1;
+        transition: opacity 0.133s ease-in;
+        opacity: 0;
+
+        @if ($position == top) {
+            top: -.6rem;
+            background: linear-gradient(to top, rgba(black, 0.06), rgba(white, 0));
+        }
+
+        @else {
+            bottom: -.6rem;
+            background: linear-gradient(to bottom, rgba(black, 0.06), rgba(white, 0));
+        }
+    }
+
+    &#{$stateClass}:after {
+        opacity: 1;
+    }
+}
+
+/* =========================================================================  */
+/* Shared styles */
+/* =========================================================================  */
+
+@mixin well {
+    padding: 1rem;
+    background-color: $neutral-bg;
+    border-radius: $border-radius;
+}
+
+@mixin floating-element {
+    background: $white;
+    box-shadow: 0 0 1rem $box-shadow-color;
+    border-radius: $border-radius-large;
+}
+
+/* =========================================================================  */
+/* Reset */
+/* =========================================================================  */
+
+@mixin button-reset {
+    border: 0;
+    background-color: transparent;
+    padding: 0;
+    appearance: none !important;
+}
+
+@mixin list-reset {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+@mixin link-reset {
+    color: currentColor;
+    text-decoration: none;
+}
+
+/* =========================================================================  */
+/* Loading state */
+/* =========================================================================  */
+
+@mixin isLoading {
+    opacity: 0.5;
+    pointer-events: none;
+}

@@ -1,0 +1,158 @@
+$pagination-height: 2.6rem;
+$btn-margin: .9rem;
+$numbers-width: 3.8rem;
+
+/* =========================================================================  */
+/* Component: Pagination */
+/* =========================================================================  */
+
+.c-pagination-wrapper {
+    transition: box-shadow 0.133s ease-in;
+    padding: 1.5rem 2.5rem;
+    background-color: $neutral-bg;
+    width: 100%;
+
+    &.is-overlapping {
+        box-shadow: $shadow-no-offset;
+    }
+}
+
+.c-pagination {
+    @include font('medium');
+    font-weight: $medium;
+    height: $pagination-height;
+    display: flex;
+}
+
+/* =========================================================================  */
+/* Pagination list */
+/* =========================================================================  */
+
+.c-pagination__list {
+    @include list-reset();
+    display: flex;
+    height: 100%;
+    margin-right: 1.6rem;
+}
+
+.c-pagination__item {
+    display: inline-block;
+    line-height: $pagination-height;
+    color: currentColor;
+    margin: 0 .2rem;
+}
+
+.c-pagination__link {
+    display: block;
+    border-radius: $border-radius;
+    transition: background-color .1s ease-in-out;
+    height: 100%;
+    min-width: 22px;
+    text-align: center;
+
+    &:hover {
+        background-color: $neutral-btn;
+    }
+}
+
+.c-pagination__link.is-active {
+    background-color: $primary-color;
+    color: $white;
+    border-radius: $border-radius;
+
+    &:hover {
+        background-color: $primary-color;
+    }
+}
+
+.c-pagination__btn-next,
+.c-pagination__btn-prev {
+    height: 100%;
+    color: $neutral-text;
+    background-color: $neutral-btn;
+
+    &:hover {
+        background-color: $neutral-btn;
+    }
+
+    .o-icon {
+        width: .8rem;
+    }
+}
+
+.c-pagination__btn-prev {
+    margin-right: $btn-margin;
+
+    .o-icon {
+        transform: rotate(90deg);
+    }
+}
+
+.c-pagination__btn-next {
+    margin-left: $btn-margin;
+
+    .o-icon {
+        transform: rotate(-90deg);
+    }
+}
+
+/* =========================================================================  */
+/* Pagination input */
+/* =========================================================================  */
+
+.c-pagination__form {
+    display: flex;
+}
+
+.c-pagination__input,
+.c-pagination__amount {
+    @include font('small');
+    width: $numbers-width;
+    text-align: center;
+    border: .2rem solid $neutral-btn;
+    font-weight: $light;
+}
+
+.c-pagination__input {
+    border-radius: $border-radius 0 0 $border-radius;
+    position: relative;
+    z-index: 1;
+    line-height: 0;
+    background-color: $neutral-bg;
+    color: $neutral-text-dark;
+
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+    }
+
+    &:focus {
+        outline: none;
+        @include focus-ring;
+    }
+}
+
+.c-pagination__amount {
+    background-color: $neutral-btn;
+    color: $neutral-text;
+    border-radius: 0 $border-radius $border-radius 0;
+    line-height: 2.4rem;
+}
+
+/* =========================================================================  */
+/* State: is overlapping */
+/* =========================================================================  */
+
+.c-pagination-wrapper:before {
+    @include bg-shadow(top, '.is-overlapping');
+}
+
+/* =========================================================================  */
+/* Scope: in table view */
+/* =========================================================================  */
+
+.c-content__view--table .c-pagination-wrapper {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}

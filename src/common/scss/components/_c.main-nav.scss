@@ -1,0 +1,274 @@
+/* =========================================================================  */
+/* Component parameters */
+/* =========================================================================  */
+
+$logo-icon: 2rem;
+$main-nav-h-padding: $spacing-xl;
+
+/* ======================================================= */
+/* Component: Main navigation */
+/* ======================================================= */
+
+.c-main-nav {
+    display: inline-block;
+    float: left;
+    background-color: $white;
+}
+
+/* ======================================================= */
+/* Main navigation inner wrapper + title */
+/* ======================================================= */
+
+.c-main-nav__inner {
+    padding: 0 $main-nav-h-padding;
+    border-right: .1rem solid $neutral-btn;
+    float: left;
+    height: 100vh;
+
+    & > ul {
+        padding-left: 0;
+        list-style-type: none;
+    }
+}
+
+/* ======================================================= */
+/* Main navigation Logo + list of buttons */
+/* ======================================================= */
+
+.c-main-nav__brand {
+    background-color: $red;
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 100%;
+    margin-top: $spacing-l;
+}
+
+/* ======================================================= */
+/* Main navigation close button */
+/* ======================================================= */
+
+.c-main-nav__close-btn {
+    transition: opacity .08s ease-in-out;
+    position: absolute;
+    top: $spacing-xs;
+    right: 0;
+    cursor: pointer;
+    opacity: 0;
+    appearance: none;
+    border: 0;
+    background: transparent;
+
+    .o-icon {
+        max-height: 1rem;
+    }
+
+    [data-whatintent="keyboard"] &:focus {
+        outline: none;
+        @include focus-ring;
+    }
+
+    [data-whatintent="mouse"] &:focus {
+        outline: none;
+    }
+}
+
+/* Interaction: :hover parent container */
+.c-main-nav__inner--primary:hover .c-main-nav__close-btn {
+    opacity: 1;
+}
+
+/* ======================================================= */
+/* Main navigation primary menu */
+/* ======================================================= */
+
+.c-main-nav__inner--primary {
+    position: relative;
+    transition: max-width .12s ease-in-out;
+    max-width: 50rem;
+    z-index: 0;
+}
+
+/* Modifier: is reduced */
+.js .c-main-nav__inner--primary.is-hidden {
+    max-width: calc(#{$logo-icon} + (2 * #{$main-nav-h-padding}));
+    z-index: 0;
+
+    .c-main-nav__text {
+        opacity: 0;
+    }
+
+    .c-main-nav__close-btn {
+        transform: rotate(180deg);
+    }
+
+    &:hover {
+        z-index: 2;
+    }
+}
+
+.c-main-nav__button {
+    @include button-reset;
+    text-decoration: none;
+    color: $neutral-text;
+
+    [data-whatintent="keyboard"] &:focus {
+        outline: none;
+        @include focus-ring;
+    }
+
+    [data-whatintent="mouse"] &:focus {
+        outline: none;
+    }
+}
+
+.c-main-nav__button.is-active {
+    color: $primary-color;
+}
+
+.c-main-nav__button.has-notification {
+    position: relative;
+}
+
+.c-main-nav__button:before {
+    content: '';
+    height: 0.6rem;
+    width: 0.6rem;
+    background-color: $red;
+    border-radius: 0.6rem;
+    display: block;
+    position: absolute;
+    left: 1.5rem;
+    top: -0.6rem;
+    opacity: 0;
+}
+
+.c-main-nav__button:after {
+    content: '';
+    height: 0.6rem;
+    width: 0.6rem;
+    background-color: $red;
+    border-radius: 0.6rem;
+    display: block;
+    position: absolute;
+    left: 1.5rem;
+    top: -0.6rem;
+    opacity: 0;
+}
+
+.c-main-nav__button.has-notification:before {
+    opacity: 1;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.c-main-nav__button.has-new-notification:before {
+    opacity: 0;
+    animation: blink 0.2s ease-in forwards;
+}
+
+@keyframes ripple {
+    0% {
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(8);
+        opacity: 0;
+    }
+}
+
+.c-main-nav__button.has-new-notification:after {
+    animation: ripple 0.8s forwards;
+    opacity: 0;
+}
+
+.c-main-nav__icon {
+    transition: background-color .08s ease-in-out;
+    display: inline-block;
+    vertical-align: super;
+    position: relative;
+    top: 0.4rem;
+    margin-right: $spacing-m;
+}
+
+.c-main-nav__icon .o-icon {
+    max-width: $logo-icon;
+    max-height: $logo-icon;
+}
+
+/* Interaction: parent is active */
+.c-main-nav__button.is-active .c-main-nav__icon .o-icon {
+    fill: $primary-color;
+}
+
+.c-main-nav__text {
+    transition: opacity .12s ease-in-out;
+    opacity: 1;
+}
+
+/* ======================================================= */
+/* Main navigation list items */
+/* ======================================================= */
+
+.c-main-nav__list {
+    margin-top: 3.7rem;
+}
+
+.c-main-nav__item {
+    @include font('large-button');
+    white-space: nowrap;
+    color: $neutral-text;
+    margin: $spacing-l 0;
+    cursor: pointer;
+    min-width: 15rem;
+}
+
+.c-main-nav__item:first-child {
+    margin-top: 0;
+}
+
+/* ======================================================= */
+/* Main navigation secondary menus */
+/* ======================================================= */
+
+.c-main-nav__inner--secondary {
+    position: relative;
+    z-index: 1;
+    min-width: 24rem;
+
+    &.is-visible {
+        display: block;
+    }
+}
+
+/* ======================================================= */
+/* Main navigation submenus */
+/* ======================================================= */
+
+.c-main-nav__submenu {
+    border-top: .1rem solid $neutral-btn;
+    padding-bottom: 3.5rem;
+}
+
+.c-main-nav__submenu .c-explorer {
+    margin-top: $spacing-l;
+}
+
+.c-main-nav__submenu .c-explorer-header + .c-explorer {
+    margin-top: $spacing-m;
+}
+
+/* ======================================================= */
+/* Main navigation tooltips */
+/* ======================================================= */
+
+.c-main-nav__inner--primary.is-hidden .c-main-nav__icon:hover > .o-tooltip {
+    opacity: 1;
+    transform: translate(100%, -50%);
+}

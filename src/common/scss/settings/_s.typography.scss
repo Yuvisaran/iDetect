@@ -1,0 +1,68 @@
+/* =========================================================================  */
+/* Font Stacks */
+/* =========================================================================  */
+
+/**
+ * Fonts in use during FOUT.
+ */
+
+$sans-serif-fallback: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$mono-fallback: 'Andale Mono', AndaleMono, monospace;
+
+/**
+ * Fonts in use after FOUT.
+ */
+$maison-neue: 'Maison Neue', $sans-serif-fallback;
+$sans-serif: $maison-neue;
+$mono: 'Maison Neue Mono', $mono-fallback;
+
+/**
+ * Main font detection.
+ */
+
+$main-font-fallback: '';
+$main-font: '';
+
+@if $main-font-type == 'sans-serif' {
+    $main-font-fallback: $sans-serif-fallback;
+    $main-font: $sans-serif;
+}
+
+/* =========================================================================  */
+/* Font weights */
+/* =========================================================================  */
+
+$medium: 500;
+$book: 400;
+$light: 200;
+
+/* =========================================================================  */
+/* Font maps */
+/* =========================================================================  */
+
+$fonts: (
+    'xx-small': (
+        'font-size': 1.1rem
+    ),
+    'x-small': (
+        'font-size': 1.2rem
+    ),
+    'small': (
+        'font-size': 1.3rem
+    ),
+    'medium': (
+        'font-size': 1.4rem
+    ),
+    'large-button': (
+        'font-size': 1.5rem
+    ),
+    'large': (
+        'font-size': 1.6rem
+    ),
+    'copy-large': (
+        'font-size': 1.8rem
+    ),
+    'copy-medium': (
+        'font-size': 1.5rem
+    )
+);

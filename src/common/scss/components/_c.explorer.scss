@@ -1,0 +1,83 @@
+/* =========================================================================  */
+/* Explorer button */
+/* =========================================================================  */
+
+.c-explorer__item {
+    @include font('small');
+    display: block;
+    text-align: left;
+    justify-content: space-between;
+    appearance: none;
+    border: 0;
+    background-color: transparent;
+    color: $neutral-text;
+    padding: .8rem;
+    width: 100%;
+    border-radius: $border-radius-small;
+    position: relative;
+
+    [data-whatintent="keyboard"] &:focus {
+        outline: none;
+        @include focus-ring;
+    }
+
+    [data-whatintent="mouse"] &:focus {
+        outline: none;
+    }
+}
+
+.c-explorer__count {
+    transition: opacity .08s ease-in-out;
+    float: right;
+}
+
+/* =========================================================================  */
+/* Scope: More buttons in explorer items */
+/* =========================================================================  */
+
+.c-explorer__more-btn {
+    transition: opacity .08s ease-in-out;
+    position: absolute;
+    right: .5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    cursor: pointer;
+}
+
+.c-explorer__more-btn.has-popover-displayed {
+    opacity: 1;
+    color: $neutral-text;
+    background-color: $neutral-bg;
+}
+
+/* =========================================================================  */
+/* Interaction: active state of the explorer element */
+/* =========================================================================  */
+
+.c-explorer__item.is-active {
+    background-color: $primary-color-bg;
+    color: $primary-color;
+}
+
+.c-explorer__item.is-active .o-more-btn--horizontal::before {
+    background-color: $primary-color;
+    box-shadow: -0.7rem 0 0 0 $primary-color, 0.7rem 0 0 0 $primary-color;
+}
+
+.c-explorer__item.is-active .c-explorer__more-btn.has-popover-displayed {
+    color: $primary-color;
+    background-color: $primary-color-bg-hover;
+}
+
+/* =========================================================================  */
+/* Interaction: hover state on explorer items when they have more buttons */
+/* =========================================================================  */
+
+.c-explorer__item--more-btn:hover .c-explorer__count {
+    opacity: 0;
+}
+
+.c-explorer__item--more-btn:hover .c-explorer__more-btn {
+    opacity: 1;
+}

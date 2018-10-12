@@ -1,0 +1,84 @@
+/* =========================================================================  */
+/* Component: More button */
+/* =========================================================================  */
+
+.o-more-btn {
+    @include button-reset;
+    cursor: pointer;
+
+    [data-whatintent="keyboard"] &:focus {
+        outline: none;
+        @include focus-ring;
+    }
+
+    [data-whatintent="mouse"] &:focus {
+        outline: none;
+    }
+    border-radius: $border-radius;
+    height: 2.8rem;
+    width: 2.8rem;
+    position: relative;
+}
+
+.o-more-btn:before {
+    content: '';
+    width: .4rem;
+    height: .4rem;
+    border-radius: .4rem;
+    background-color: $neutral-text;
+    position: absolute;
+    left: 1.2rem;
+    top: 0.5rem;
+    box-shadow: 0 0.7rem 0 0 $neutral-text, 0 1.4rem 0 0 $neutral-text;
+}
+
+.o-more-btn:hover,
+.o-more-btn.has-popover-displayed {
+    background-color: $neutral-bg;
+}
+
+/* =========================================================================  */
+/* Modifier: thin */
+/* =========================================================================  */
+
+.o-more-btn--thin {
+    width: 1.2rem;
+}
+
+.o-more-btn--thin:before {
+    left: 0.4rem;
+}
+
+/* =========================================================================  */
+/* Modifier: horizontal more button */
+/* =========================================================================  */
+
+.o-more-btn--horizontal:before {
+    content: '';
+    width: .4rem;
+    height: .4rem;
+    border-radius: .4rem;
+    background-color: $neutral-text;
+    position: absolute;
+    left: 1.2rem;
+    top: 1.2rem;
+    box-shadow: -0.7rem 0 0 0 $neutral-text, 0.7rem 0 0 0 $neutral-text;
+}
+
+.o-more-btn--horizontal.o-more-btn--thin {
+    width: 2.8rem;
+    height: 1.2rem;
+}
+
+.o-more-btn--horizontal.o-more-btn--thin:before {
+    left: 1.2rem;
+    top: 0.4rem;
+}
+
+/* =========================================================================  */
+/* Scope: active explorer item */
+/* =========================================================================  */
+
+.c-explorer__item.is-active .o-more-btn:hover {
+    background-color: $primary-color-bg-hover;
+}

@@ -1,0 +1,45 @@
+/* =========================================================================  */
+/* Multi button */
+/* =========================================================================  */
+
+.c-multi-btn {
+    @include clearfix;
+}
+
+.c-multi-btn__item {
+    float: left;
+    border-radius: 0;
+    color: $neutral-text;
+    background-color: $neutral-btn;
+    border: 0.1rem solid $neutral-3;
+    margin-left: -0.1rem;
+    width: 2.7rem;
+    padding: 0;
+    display: inline-flex;
+    justify-content: center;
+    position: relative;
+    top: 0.1rem;
+
+    &:hover {
+        color: $neutral-2;
+        background-color: $neutral-btn-hover;
+    }
+}
+
+.c-multi-btn__item:first-child {
+    border-radius: $border-radius 0 0 $border-radius;
+    margin-left: 0;
+}
+
+.c-multi-btn__item:last-child {
+    border-radius: 0 $border-radius $border-radius 0;
+}
+
+.c-multi-btn__icon {
+    opacity: 0.5;
+}
+
+.c-multi-btn__item:hover .c-multi-btn__icon,
+.c-multi-btn__item.is-active .c-multi-btn__icon {
+    opacity: 1;
+}

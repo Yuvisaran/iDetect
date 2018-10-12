@@ -1,0 +1,384 @@
+/* =========================================================================  */
+/* Object: button */
+/* =========================================================================  */
+
+.o-btn {
+    appearance: none;
+    display: inline-block;
+    @include font-family($main-font-type);
+    font-weight: $medium;
+    @include font('medium');
+    line-height: 1em;
+    color: $primary-color;
+    padding: 0.5rem 0.9rem;
+    background-color: $primary-color-bg;
+    border: 0;
+    border-radius: $border-radius;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color .1s ease-in-out;
+    position: relative;
+    white-space: nowrap;
+    height: 2.4rem;
+
+    [data-whatintent="keyboard"] &:focus {
+        outline: none;
+        @include focus-ring;
+    }
+
+    [data-whatintent="mouse"] &:focus {
+        outline: none;
+    }
+
+    &:hover {
+        background-color: $primary-color-bg-hover;
+    }
+
+    &.has-popover-displayed,
+    &.is-active {
+        color: $primary-color !important;
+        background-color: $primary-color-bg-hover !important;
+    }
+}
+
+.o-btn[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* =========================================================================  */
+/* Modifier: large */
+/* =========================================================================  */
+
+.o-btn--large {
+    @include font('large-button');
+    padding: $text-box-v-spacing $text-box-h-spacing ($text-box-v-spacing * 1.25);
+    height: auto;
+}
+
+/* =========================================================================  */
+/* Modifier: primary */
+/* =========================================================================  */
+
+.o-btn--primary {
+    background-color: $primary-color;
+    color: $white;
+
+    &:hover {
+        background-color: $primary-color-hover;
+    }
+}
+
+/* =========================================================================  */
+/* Modifier: transparent */
+/* =========================================================================  */
+
+.o-btn--transparent {
+    color: $neutral-text;
+    background-color: transparent;
+    padding: .8rem 0;
+
+    &:hover {
+        color: $neutral-text-dark;
+        background-color: transparent;
+    }
+
+    &.has-popover-displayed {
+        color: $primary-color !important;
+        background-color: transparent !important;
+    }
+}
+
+/* =========================================================================  */
+/* Modifier: warning */
+/* =========================================================================  */
+
+.o-btn--warning {
+    background-color: $negative-bg;
+    color: $negative-text;
+
+    &:hover {
+        background-color: $negative-bg-hover;
+    }
+}
+
+/* =========================================================================  */
+/* Modifier: small icon */
+/* =========================================================================  */
+
+.o-btn--small-icon .o-icon {
+    max-width: 1rem;
+    margin-left: .3rem;
+}
+
+/* =========================================================================  */
+/* Modifier: Inline */
+/* =========================================================================  */
+
+.o-btn--inline {
+    color: $neutral-text;
+    background: none;
+    padding: 0;
+
+    &:hover {
+        color: $neutral-text-dark;
+        background: none;
+    }
+}
+
+/* =========================================================================  */
+/* Modifier: neutral */
+/* =========================================================================  */
+
+.o-btn--neutral {
+    color: $neutral-text;
+    background-color: $neutral-btn;
+
+    &:hover {
+        color: $neutral-text-dark;
+        background-color: $neutral-btn-hover;
+    }
+}
+
+.o-btn--neutral-light {
+    color: $neutral-text;
+    background-color: $neutral-bg;
+
+    &:hover {
+        color: $neutral-text-dark;
+        background-color: $neutral-bg;
+    }
+}
+
+/* =========================================================================  */
+/* Modifier: concealed */
+/* =========================================================================  */
+
+.o-btn--concealed {
+    padding: 0;
+    width: 2.8rem;
+    height: 2.8rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: $neutral-text;
+    background-color: transparent;
+
+    &:focus,
+    &:hover {
+        background-color: $neutral-bg;
+    }
+}
+
+/* =========================================================================  */
+/* Modifier: tooltip */
+/* =========================================================================  */
+
+.o-btn--tooltip {
+    position: relative;
+}
+
+.o-btn--tooltip:before,
+.o-btn--tooltip:after {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0.3rem);
+    opacity: 0;
+    transition: opacity 0.133s ease-out, transform 0.133s ease-out;
+}
+
+/**
+ * The arrow
+ */
+.o-btn--tooltip:before {
+    content: '';
+    display: inline-block;
+    width: 0;
+    border-style: solid;
+    border-width: 0.5rem 0.6rem 0 0.6rem;
+    border-color: $black transparent transparent;
+    top: -0.7rem;
+}
+
+/**
+ * The label
+ */
+.o-btn--tooltip:after {
+    content: attr(aria-label);
+    @include font('medium');
+    color: $white;
+    display: inline-block;
+    background-color: $black;
+    padding: 0.7rem 1rem;
+    border-radius: $border-radius;
+    top: -3.5rem;
+    white-space: nowrap;
+    line-height: 1em;
+    pointer-events: none;
+}
+
+.o-btn--tooltip:focus:before,
+.o-btn--tooltip:focus:after,
+.o-btn--tooltip:hover:before,
+.o-btn--tooltip:hover:after {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+[data-whatinput="mouse"] .o-btn--tooltip:focus:before,
+[data-whatinput="mouse"] .o-btn--tooltip:focus:after {
+    opacity: 0;
+    transform: translate(-50%, 0.3rem);
+}
+
+[data-whatinput="mouse"] .o-btn--tooltip:hover:before,
+[data-whatinput="mouse"] .o-btn--tooltip:hover:after {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+.o-btn--tooltip-right:after {
+    left: auto;
+    right: 0;
+    transform: translate(0, 0.3rem);
+}
+
+.o-btn--tooltip-right:focus:after,
+.o-btn--tooltip-right:hover:after, {
+    transform: translate(0, 0);
+}
+
+[data-whatinput="mouse"] .o-btn--tooltip-right:focus:after {
+    transform: translate(0, 0.3rem);
+}
+
+[data-whatinput="mouse"] .o-btn--tooltip-right:hover:after {
+    transform: translate(0, 0);
+}
+
+/* =========================================================================  */
+/* Modifier: isEffective */
+/* =========================================================================  */
+
+.o-btn-wrapper {
+    display: inline-flex;
+
+    .o-btn:nth-child(1) {
+        border-radius: .2rem 0 0 .2rem;
+        padding: 0.5rem 0.4rem 0.5rem 0.9rem;
+
+        &:focus + .o-btn {
+            background-color: $negative-bg-hover;
+        }
+    }
+
+    .o-btn:nth-child(2) {
+        border-radius: 0 .2rem .2rem 0;
+        padding: 0.5rem 0.5rem 0.5rem 0.2rem;
+    }
+}
+
+.o-btn-wrapper:hover .o-btn,
+.o-btn-wrapper:focus .o-btn {
+    background-color: $negative-bg-hover;
+
+    & * {
+        background-color: $negative-bg-hover;
+    }
+}
+
+.o-btn-wrapper .o-icon {
+    max-height: 1.1rem;
+    top: -0.1rem;
+    background-color: transparent;
+
+    &:hover {
+        background-color: transparent;
+    }
+}
+
+/* =========================================================================  */
+/* Modifier: Text lookalike */
+/* =========================================================================  */
+
+.o-btn--text-lookalike {
+    transition: .08s ease-in-out;
+    color: $neutral-text;
+    border: 0.2rem solid $neutral-stroke;
+    background-color: $white;
+    appearance: none;
+    border-radius: 0.2rem;
+    padding: 0.9rem 1.5rem;
+    line-height: 1;
+    text-align: left;
+    width: 100%;
+    height: auto;
+
+    &.u-attention-required {
+        border: 0.2rem solid $red;
+    }
+
+    &:hover * {
+        background-color: transparent;
+    }
+}
+
+.o-btn--text-lookalike:hover {
+    color: $neutral-text-dark;
+    background-color: transparent;
+}
+
+.o-btn__secondary-text {
+    color: $red;
+    @include font('small');
+    float: right;
+    margin-left: 15px;
+}
+
+/* =========================================================================  */
+/* Modifier: Positive */
+/* =========================================================================  */
+
+.o-btn--positive {
+    &:hover,
+    &:focus {
+        background-color: $positive-bg-hover;
+
+        * {
+            background-color: $positive-bg-hover;
+        }
+    }
+}
+
+/* =========================================================================  */
+/* Modifier: Destructive */
+/* =========================================================================  */
+
+.o-btn--destructive {
+    color: $negative-text;
+
+    &:hover,
+    &:focus {
+        color: $negative-text-hover;
+    }
+}
+
+.o-btn--destructive.u-negative {
+    &:hover,
+    &:focus {
+        background-color: $negative-bg-hover;
+
+        * {
+            background-color: $negative-bg-hover;
+        }
+    }
+}
+
+/* =========================================================================  */
+/* Modifier: small */
+/* =========================================================================  */
+
+.o-btn--small {
+    @include font('x-small');
+    height: auto;
+}

@@ -1,0 +1,24 @@
+/* =========================================================================  */
+/* Component: advanced filters */
+/* =========================================================================  */
+
+.c-advanced-filters__btn {
+    width: 100%;
+}
+
+.c-advanced-filters__footer {
+    padding: 1.5rem 2rem;
+    border-top: .1rem solid $neutral-stroke;
+}
+
+.c-advanced-filters__head {
+    padding: 2rem;
+}
+
+.c-advanced-filters__footer .o-btn:last-child {
+    float: right;
+}
+
+.c-advanced-filters .c-scroll-box__scrollable {
+    max-height: 45rem;
+}

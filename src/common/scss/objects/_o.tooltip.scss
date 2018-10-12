@@ -1,0 +1,39 @@
+/* =========================================================================  */
+/* Object: tooltip */
+/* =========================================================================  */
+
+.o-tooltip {
+    @include font('medium');
+    background-color: $black;
+    color: $white;
+    padding: 0.7rem 1rem;
+    border-radius: $border-radius;
+    line-height: 1em;
+    pointer-events: none;
+    position: relative;
+}
+
+.o-tooltip__arrow {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(-100%, -50%);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px 5px 6px 0;
+    border-color: transparent $black transparent;
+}
+
+/* =========================================================================  */
+/* Scope: in main navigation */
+/* =========================================================================  */
+
+.c-main-nav__icon .o-tooltip {
+    transition: opacity .05s .5s ease-in-out, transform .05s .5s ease-in-out;
+    position: absolute;
+    top: 50%;
+    right: -.8rem;
+    transform: translate(95%, -50%);
+    opacity: 0;
+}

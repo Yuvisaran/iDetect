@@ -1,0 +1,1002 @@
+/* =========================================================================  */
+/* Object: icon */
+/* =========================================================================  */
+
+.o-icon {
+    fill: currentColor;
+    vertical-align: middle;
+    background-color: transparent;
+    display: block;
+
+    &:hover {
+        background-color: transparent;
+    }
+}
+
+/* =========================================================================  */
+/* Modifier: prepended */
+/* =========================================================================  */
+
+.o-icon--prepended {
+    display: inline-block;
+    margin-right: 0.2rem;
+    position: relative;
+    top: -0.2rem;
+}
+
+/* =========================================================================  */
+/* Modifier: appended */
+/* =========================================================================  */
+
+.o-icon--appended {
+    display: inline-block;
+    margin-left: 0.2rem;
+    position: relative;
+}
+
+/* =========================================================================  */
+/* Icon collection */
+/* =========================================================================  */
+
+.o-icon--ach {
+    width: 1.7rem;
+    height: 0.7rem;
+}
+
+.o-icon--ach-large {
+    width: 3.5rem;
+    height: 1.4rem;
+}
+
+.o-icon--alert {
+    width: 1.4rem;
+    height: 1.4rem;
+}
+
+.o-icon--alert-medium {
+    width: 1.8rem;
+    height: 1.8rem;
+}
+
+.o-icon--alert-large {
+    width: 3rem;
+    height: 2.9rem;
+}
+
+.o-icon--alias-large {
+    width: 3.8rem;
+    height: 4.1rem;
+}
+
+.o-icon--art-large {
+    width: 3.1rem;
+    height: 3rem;
+}
+
+.o-icon--atm-large {
+    width: 3rem;
+    height: 2.4rem;
+}
+
+.o-icon--atom-large {
+    width: 3.7rem;
+    height: 3rem;
+}
+
+.o-icon--bad-girl-large {
+    width: 2.8rem;
+    height: 3rem;
+}
+
+.o-icon--bad-girl-alt-large {
+    width: 2.6rem;
+    height: 3rem;
+}
+
+.o-icon--bad-guy-large {
+    width: 2.4rem;
+    height: 3rem;
+}
+
+.o-icon--bad-guy-alt-large {
+    width: 2.7rem;
+    height: 3rem;
+}
+
+.o-icon--bad-guy-incomplete-large {
+    width: 2.4rem;
+    height: 3rem;
+}
+
+.o-icon--bad-guy-incomplete-alt-large {
+    width: 2.7rem;
+    height: 3rem;
+}
+
+.o-icon--bank-account-large {
+    width: 3.1rem;
+    height: 3.1rem;
+}
+
+.o-icon--bank-account-alt-large {
+    width: 2.5rem;
+    height: 3rem;
+}
+
+.o-icon--bank-large {
+    width: 3.1rem;
+    height: 2.9rem;
+}
+
+.o-icon--bidirectional {
+    width: 1.5rem;
+    height: 1.4rem;
+}
+
+.o-icon--bidirectional-large {
+    width: 3rem;
+    height: 2.8rem;
+}
+
+.o-icon--bidirectional-medium {
+    width: 1.8rem;
+    height: 1.7rem;
+}
+
+.o-icon--bishop-large {
+    width: 2rem;
+    height: 3rem;
+}
+
+.o-icon--bitcoin-large {
+    width: 2.2rem;
+    height: 3rem;
+}
+
+.o-icon--bomb-large {
+    width: 3rem;
+    height: 2.8rem;
+}
+
+.o-icon--building-large {
+    width: 2.5rem;
+    height: 3rem;
+}
+
+.o-icon--business-rel {
+    width: 0.8rem;
+    height: 1.4rem;
+}
+
+.o-icon--business-rel-large {
+    width: 1.6rem;
+    height: 3.1rem;
+}
+
+.o-icon--business-rel-alt {
+    width: 1.4rem;
+    height: 1.4rem;
+}
+
+.o-icon--business-rel-alt-large {
+    width: 3rem;
+    height: 3rem;
+}
+
+.o-icon--calendar {
+    width: 1.4rem;
+    height: 1.4rem;
+}
+
+.o-icon--calendar-medium {
+    width: 1.8rem;
+    height: 1.8rem;
+}
+
+.o-icon--car-crash-large {
+    width: 3rem;
+    height: 2.4rem;
+}
+
+.o-icon--car-large {
+    width: 3rem;
+    height: 1.9rem;
+}
+
+.o-icon--caret-down {
+    width: 0.9rem;
+    height: 0.6rem;
+}
+
+.o-icon--caret-left {
+    width: 0.6rem;
+    height: 0.9rem;
+}
+
+.o-icon--case-large {
+    width: 3.9rem;
+    height: 3.1rem;
+}
+
+.o-icon--cash-large {
+    width: 3rem;
+    height: 3rem;
+}
+
+.o-icon--checkmark {
+    width: 1rem;
+    height: 0.8rem;
+}
+
+.o-icon--close {
+    width: 1.3rem;
+    height: 1.3rem;
+}
+
+.o-icon--columns {
+    width: 1.4rem;
+    height: 1.2rem;
+}
+
+.o-icon--columns-medium {
+    width: 1.8rem;
+    height: 1.5rem;
+}
+
+.o-icon--comment {
+    width: 1.4rem;
+    height: 1.4rem;
+}
+
+.o-icon--computer {
+    width: 1.4rem;
+    height: 1.4rem;
+}
+
+.o-icon--computer-medium {
+    width: 1.8rem;
+    height: 1.7rem;
+}
+
+.o-icon--computer-large {
+    width: 3rem;
+    height: 3.1rem;
+}
+
+.o-icon--container-large {
+    width: 3rem;
+    height: 3rem;
+}
+
+.o-icon--contract {
+    width: 1.7rem;
+    height: 1.4rem;
+}
+
+.o-icon--contract-large {
+    width: 4rem;
+    height: 3rem;
+}
+
+.o-icon--control-tower-large {
+    width: 1.9rem;
+    height: 3rem;
+}
+
+.o-icon--cross {
+    width: 1rem;
+    height: 1rem;
+}
+
+.o-icon--cyber-attack-large {
+    width: 3rem;
+    height: 3.1rem;
+}
+
+.o-icon--delete {
+    width: 1.3rem;
+    height: 1.4rem;
+}
+
+.o-icon--delivery-large {
+    width: 3rem;
+    height: 3.1rem;
+}
+
+.o-icon--discard {
+    width: 1.1rem;
+    height: 1.1rem;
+}
+
+.o-icon--document {
+    width: 1.1rem;
+    height: 1.3rem;
+}
+
+.o-icon--document-stack-large {
+    width: 2.8rem;
+    height: 3rem;
+}
+
+.o-icon--display {
+    width: 1.5rem;
+    height: 1.2rem;
+}
+
+.o-icon--dna-large {
+    width: 2.1rem;
+    height: 3rem;
+}
+
+.o-icon--drag {
+    width: 0.8rem;
+    height: 1.4rem;
+}
+
+.o-icon--dropdown {
+    width: 0.9rem;
+    height: 1.6rem;
+}
+
+.o-icon--edit {
+    width: 1.4rem;
+    height: 1.4rem;
+}
+
+.o-icon--electronic-equipment-large {
+    width: 2.9rem;
+    height: 2.9rem;
+}
+
+.o-icon--email {
+    width: 1.4rem;
+    height: 1.1rem;
+}
+
+.o-icon--email-large {
+    width: 3.1rem;
+    height: 2.4rem;
+}
+
+.o-icon--employee-female-large {
+    width: 2.8rem;
+    height: 3.6rem;
+}
+
+.o-icon--employee-male-large {
+    width: 3.2rem;
+    height: 3.6rem;
+}
+
+.o-icon--employee-unknown-large {
+    width: 3.4rem;
+    height: 3.4rem;
+}
+
+.o-icon--energy-large {
+    width: 1.5rem;
+    height: 3.2rem;
+}
+
+.o-icon--event-large {
+    width: 2.8rem;
+    height: 3.1rem;
+}
+
+.o-icon--export {
+    width: 1.1rem;
+    height: 1.4rem;
+}
+
+.o-icon--fax-large {
+    width: 3rem;
+    height: 3rem;
+}
+
+.o-icon--file {
+    width: 1.2rem;
+    height: 1.4rem;
+}
+
+.o-icon--file-medium {
+    width: 1.5rem;
+    height: 1.8rem;
+}
+
+.o-icon--file-large {
+    width: 2.5rem;
+    height: 3rem;
+}
+
+.o-icon--filter {
+    width: 1.4rem;
+    height: 0.9rem;
+}
+
+.o-icon--filter-medium {
+    width: 1.8rem;
+    height: 1.2rem;
+}
+
+.o-icon--flag {
+    width: 1.2rem;
+    height: 1.4rem;
+}
+
+.o-icon--folder {
+    width: 1.4rem;
+    height: 1.4rem;
+}
+
+.o-icon--folder-medium {
+    width: 1.8rem;
+    height: 1.8rem;
+}
+
+.o-icon--folder-large {
+    width: 3rem;
+    height: 3rem;
+}
+
+.o-icon--gsm-tower-large {
+    width: 3rem;
+    height: 3rem;
+}
+
+.o-icon--harbor-large {
+    width: 1.3rem;
+    height: 3rem;
+}
+
+.o-icon--home-large {
+    width: 3.1rem;
+    height: 3rem;
+}
+
+.o-icon--ip {
+    width: 1.4rem;
+    height: 1.2rem;
+}
+
+.o-icon--ip-large {
+    width: 2rem;
+    height: 1.8rem;
+}
+
+.o-icon--laptop-large {
+    width: 3rem;
+    height: 2.1rem;
+}
+
+.o-icon--legal-arrangement-large {
+    width: 2.5rem;
+    height: 3rem;
+}
+
+.o-icon--legal-person-large {
+    width: 3rem;
+    height: 3.3rem;
+}
+
+.o-icon--link {
+    width: 1.4rem;
+    height: 1rem;
+}
+
+.o-icon--link-large {
+    width: 3rem;
+    height: 2.2rem;
+}
+
+.o-icon--linkchart {
+    width: 1.2rem;
+    height: 1.4rem;
+}
+
+.o-icon--linkchart-medium {
+    width: 1.5rem;
+    height: 1.8rem;
+}
+
+.o-icon--linkchart-large {
+    width: 2.4rem;
+    height: 3rem;
+}
+
+.o-icon--list {
+    width: 1.4rem;
+    height: 1rem;
+}
+
+.o-icon--list-alt {
+    width: 1.2rem;
+    height: 1rem;
+}
+
+.o-icon--location {
+    width: 1.4rem;
+    height: 1.4rem;
+}
+
+.o-icon--location-large {
+    width: 3rem;
+    height: 3rem;
+}
+
+.o-icon--logical {
+    width: 1.4rem;
+    height: 1.4rem;
+}
+
+.o-icon--match {
+    width: 1.3rem;
+    height: 0.7rem;
+}
+
+.o-icon--match-large {
+    width: 2rem;
+    height: 1.1rem;
+}
+
+.o-icon--material-large {
+    width: 3.1rem;
+    height: 3.1rem;
+}
+
+.o-icon--maximize {
+    width: 1.4rem;
+    height: 1.4rem;
+}
+
+.o-icon--minor-female-large {
+    width: 2.7rem;
+    height: 3rem;
+}
+
+.o-icon--minor-incomplete-large {
+    width: 2.4rem;
+    height: 3rem;
+}
+
+.o-icon--minor-male-large {
+    width: 2.4rem;
+    height: 3rem;
+}
+
+.o-icon--modus-operandi-large {
+    width: 3.4rem;
+    height: 3.6rem;
+}
+
+.o-icon--money-laundering-large {
+    width: 3rem;
+    height: 3.3rem;
+}
+
+.o-icon--money-laundering-alt-large {
+    width: 4rem;
+    height: 4.7rem;
+}
+
+.o-icon--note-large {
+    width: 2.7rem;
+    height: 3.1rem;
+}
+
+.o-icon--nun-large {
+    width: 2.8rem;
+    height: 3.2rem;
+}
+
+.o-icon--nut {
+    width: 1.4rem;
+    height: 1.3rem;
+}
+
+.o-icon--nut-medium {
+    width: 1.8rem;
+    height: 1.6rem;
+}
+
+.o-icon--parameters {
+    width: 1.2rem;
+    height: 1.6rem;
+
+    .o-btn & {
+        position: relative;
+        top: -0.1rem;
+    }
+}
+
+.o-icon--pause {
+    width: 0.9rem;
+    height: 1.2rem;
+}
+
+.o-icon--passport-large {
+    width: 2.5rem;
+    height: 3rem;
+}
+
+.o-icon--payment-card {
+    width: 1.4rem;
+    height: 1.1rem;
+}
+
+.o-icon--payment-card-large {
+    width: 3rem;
+    height: 2.3rem;
+}
+
+.o-icon--people {
+    width: 1.4rem;
+    height: 1.3rem;
+}
+
+.o-icon--people-medium {
+    width: 1.8rem;
+    height: 1.7rem;
+}
+
+.o-icon--people-large {
+    width: 3rem;
+    height: 2.8rem;
+}
+
+.o-icon--person {
+    width: 1.1rem;
+    height: 1.4rem;
+}
+
+.o-icon--person-medium {
+    width: 1.4rem;
+    height: 1.8rem;
+}
+
+.o-icon--person-large {
+    width: 2.3rem;
+    height: 3rem;
+}
+
+.o-icon--person-male-large {
+    width: 2.4rem;
+    height: 3rem;
+}
+
+.o-icon--person-female-large {
+    width: 2.8rem;
+    height: 3rem;
+}
+
+.o-icon--phone {
+    width: 1rem;
+    height: 1.4rem;
+}
+
+.o-icon--phone-large {
+    width: 2.1rem;
+    height: 3rem;
+}
+
+.o-icon--phone-landline-large {
+    width: 3rem;
+    height: 3rem;
+}
+
+.o-icon--phone-landline-alt-large {
+    width: 3rem;
+    height: 3rem;
+}
+
+.o-icon--pill-large {
+    width: 3rem;
+    height: 3rem;
+}
+
+.o-icon--plane-large {
+    width: 3rem;
+    height: 2.7rem;
+}
+
+.o-icon--play {
+    width: 1.1rem;
+    height: 1.4rem;
+}
+
+.o-icon--plus {
+    width: 1rem;
+    height: 1rem;
+
+    .o-btn & {
+        top: -0.1rem;
+    }
+}
+
+.o-icon--priest-large {
+    width: 2.4rem;
+    height: 3.4rem;
+}
+
+.o-icon--profile {
+    width: 1.4rem;
+    height: 1.4rem;
+}
+
+.o-icon--portfolio-large {
+    width: 3rem;
+    height: 3rem;
+}
+
+.o-icon--profile-medium {
+    width: 1.8rem;
+    height: 1.8rem;
+}
+
+.o-icon--safe-large {
+    width: 3rem;
+    height: 3rem;
+}
+
+.o-icon--sepa {
+    width: 1.7rem;
+    height: 0.6rem;
+}
+
+.o-icon--sepa-large {
+    width: 4.2rem;
+    height: 1.3rem;
+}
+
+.o-icon--swift {
+    width: 1.8rem;
+    height: 1.8rem;
+}
+
+.o-icon--swift-large {
+    width: 3rem;
+    height: 3rem;
+}
+
+.o-icon--risk {
+    width: 1.9rem;
+    height: 1.9rem;
+}
+
+.o-icon--role {
+    width: 1.4rem;
+    height: 1.4rem;
+}
+
+.o-icon--role-medium {
+    width: 1.8rem;
+    height: 1.8rem;
+}
+
+.o-icon--rules {
+    width: 1.4rem;
+    height: 1.1rem;
+}
+
+.o-icon--rules-medium {
+    width: 1.9rem;
+    height: 1.5rem;
+}
+
+.o-icon--rss {
+    width: 1.4rem;
+    height: 1.4rem;
+}
+
+.o-icon--scenario {
+    width: 1.4rem;
+    height: 1rem;
+}
+
+.o-icon--scenario-medium {
+    width: 1.8rem;
+    height: 1.2rem;
+}
+
+.o-icon--search {
+    width: 1.4rem;
+    height: 1.4rem;
+}
+
+.o-icon--selection {
+    width: 1.4rem;
+    height: 1.3rem;
+}
+
+.o-icon--server-large {
+    width: 3rem;
+    height: 2.2rem;
+}
+
+.o-icon--server-alt-large {
+    width: 2.7rem;
+    height: 3rem;
+}
+
+.o-icon--settings {
+    width: 0.9rem;
+    height: 1.4rem;
+}
+
+.o-icon--settings-medium {
+    width: 1.2rem;
+    height: 1.8rem;
+}
+
+.o-icon--sidebar {
+    width: 1.4rem;
+    height: 1.2rem;
+}
+
+.o-icon--sim-large {
+    width: 2.5rem;
+    height: 3rem;
+}
+
+.o-icon--snapshot {
+    width: 1.4rem;
+    height: 1.4rem;
+
+    &.o-icon--prepended {
+        top: -0.1rem;
+    }
+}
+
+.o-icon--sort {
+    width: 1.3rem;
+    height: 1.1rem;
+}
+
+.o-icon--structure {
+    width: 1.1rem;
+    height: 1.4rem;
+}
+
+.o-icon--structure-medium {
+    width: 1.3rem;
+    height: 1.8rem;
+}
+
+.o-icon--structure-large {
+    width: 2.2rem;
+    height: 3rem;
+}
+
+.o-icon--table {
+    width: 1.1rem;
+    height: 1.4rem;
+}
+
+.o-icon--tasks-large {
+    width: 2.7rem;
+    height: 3rem;
+}
+
+.o-icon--terrorist-female-large {
+    width: 5rem;
+    height: 4.6rem;
+}
+
+.o-icon--terrorist-male-large {
+    width: 5rem;
+    height: 4.6rem;
+}
+
+.o-icon--terrorist-unisex-large {
+    width: 2.7rem;
+    height: 3.2rem;
+}
+
+.o-icon--timer {
+    width: 1.4rem;
+    height: 1.3rem;
+}
+
+.o-icon--timer-medium {
+    width: 1.8rem;
+    height: 1.7rem;
+
+    .o-btn & {
+        position: relative;
+        top: -0.2rem;
+    }
+}
+
+.o-icon--timer-large {
+    width: 3.5rem;
+    height: 2.8rem;
+}
+
+.o-icon--trade {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.o-icon--trade-large {
+    width: 3rem;
+    height: 3rem;
+}
+
+.o-icon--truck-large {
+    width: 3rem;
+    height: 2.4rem;
+}
+
+.o-icon--upload {
+    width: 1.4rem;
+    height: 1.1rem;
+}
+
+.o-icon--vessel-large {
+    width: 2.9rem;
+    height: 1.8rem;
+}
+
+.o-icon--view {
+    width: 1.4rem;
+    height: 1rem;
+}
+
+.o-icon--wanted-person-large {
+    width: 3.4rem;
+    height: 4rem;
+}
+
+.o-icon--warning {
+    width: 1.4rem;
+    height: 1.4rem;
+}
+
+.o-icon--warning-medium {
+    width: 1.8rem;
+    height: 1.8rem;
+}
+
+.o-icon--watched-female-large {
+    width: 4.5rem;
+    height: 3rem;
+}
+
+.o-icon--watched-male-large {
+    width: 4.5rem;
+    height: 3rem;
+}
+
+.o-icon--watched-unisex-large {
+    width: 4.4rem;
+    height: 3rem;
+}
+
+.o-icon--weapon-large {
+    width: 2.6rem;
+    height: 3rem;
+}
+
+.o-icon--witness-female-large {
+    width: 2.3rem;
+    height: 3.5rem;
+}
+
+.o-icon--witness-male-large {
+    width: 2.4rem;
+    height: 4.2rem;
+}
+
+.o-icon--witness-unisex-large {
+    width: 2.4rem;
+    height: 4.2rem;
+}
+
+.o-icon--workflow {
+    width: 1.3rem;
+    height: 1.4rem;
+}
+
+.o-icon--workflow-medium {
+    width: 1.7rem;
+    height: 1.8rem;
+}

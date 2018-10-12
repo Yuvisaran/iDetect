@@ -1,0 +1,205 @@
+/* =========================================================================  */
+/* Linkchart */
+/* =========================================================================  */
+
+.node {
+  &.hasChildren {
+    cursor: pointer;
+  }
+  .flag {
+    filter: url(#drop-shadow-light);
+  }
+}
+.node text {
+  font: 10px sans-serif;
+  fill: black;
+}
+.node .flagsChildren{
+  cursor: pointer;
+}
+.node .nodeName {
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.2s opacity ease-out;
+  .level2-5 & {
+    opacity: 1;
+    visibility: visible;
+  }
+  text {
+    font-size: 14px;
+    fill: #575A61;
+  }
+  rect {
+    fill: #f6f6f6;
+    stroke: #e1e1e1;
+    stroke-width: 1px;
+  }
+  rect.fake {
+    stroke-width: 0px;
+  }
+}
+.flags {
+  visibility: hidden;
+  &.visible {
+    visibility: visible;
+  }
+  text {
+    font-size: 14px;
+    fill: white;
+    font-family: $maison-neue;
+  }
+}
+
+.link {
+  fill: none;
+  stroke: #4B4E53;
+  stroke-width: 1px;
+  cursor:pointer;
+  &.veryThick {
+    stroke-width: 6px;
+    stroke-opacity: 0.5;
+  }
+  &.thick {
+    stroke-width: 3px;
+    stroke-opacity: 0.7;
+  }
+  &.selected {
+    stroke: $blue;
+  }
+}
+
+.node[risk="-1"] > circle,
+.node[risk="-1"] > rect {
+  fill: $risk-neutral;
+}
+.node[risk="0"] > circle,
+.node[risk="0"] > rect {
+  fill: $risk-low;
+}
+.node[risk="1"] > circle,
+.node[risk="1"] > rect {
+  fill: $risk-guarded;
+}
+.node[risk="2"] > circle,
+.node[risk="2"] > rect {
+  fill: $risk-elevated;
+}
+.node[risk="3"] > circle,
+.node[risk="3"] > rect {
+  fill: $risk-high;
+}
+.node[risk="4"] > circle,
+.node[risk="4"] > rect {
+fill: $risk-severe;
+}
+
+.selection {
+  stroke : #4A4AF0;
+  fill : rgba(#4A4AF0, 0.05);
+}
+.node.selected > rect {
+  stroke : #4A4AF0;
+  stroke-width: 2px;
+  filter: url(#drop-shadow);
+}.node.selected > circle {
+  stroke : #4A4AF0;
+  stroke-width: 2px;
+  filter: url(#drop-shadow);
+}
+
+.node.pinned {}
+
+.swift {
+  opacity: 1;
+  transition: 0.2s opacity ease-out;
+  cursor: pointer;
+}
+.swift.hidden {
+  opacity: 0;
+}
+.swift text,
+.swift use {
+  pointer-events: none;
+}
+.swift .level1 {
+  fill: #4A4AF0;
+  transition: 0.2s ease-out;
+}
+.swift  {
+  .level3 {
+    font-size: 14px;
+    fill: white;
+  }
+  &:not(:hover) .level3{
+    visibility: hidden;
+  }
+}
+
+
+.container {
+  position: relative;
+  text-align: center;
+  display: inline-block;
+  font-size: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+/* ZOOM LEVELS */
+.container.level3 {
+  .swift:not(:hover) .level3 {
+    visibility: visible;
+  }
+}
+.container.level2 {
+  .swift:not(:hover) .level1 {
+    width: 26px !important;
+  }
+}
+.container.level1 {
+  .swift:not(:hover) .level1 {
+    width: 26px !important;
+  }
+  .swift:not(:hover) .level2 {
+    visibility: hidden;
+  }
+}
+
+.container.zooming {
+}
+
+svg {
+  user-select: none;
+}
+svg .layout {
+  opacity: 0.2;
+  rect {
+    fill:url(#bgLayout);
+  }
+
+  .level1 & {
+    opacity: 0.4;
+    rect {
+      fill:url(#bgLayoutLight);
+    }
+    &.hidden rect {
+      fill: #e8e8e8;
+    }
+  }
+}
+
+/* =========================================================================  */
+/* Popover */
+/* =========================================================================  */
+
+.c-lc-popover {
+    position: fixed;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.c-lc-popover.is-visible {
+    visibility: visible;
+    pointer-events: auto;
+}

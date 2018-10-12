@@ -1,0 +1,31 @@
+/* =========================================================================  */
+/* Risk level */
+/* =========================================================================  */
+
+.o-risk-level {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 1rem;
+    background-color: $neutral-bg;
+}
+
+.o-risk-level--low {
+    background-color: $risk-low;
+}
+
+.o-risk-level--guarded {
+    background-color: $risk-guarded;
+}
+
+.o-risk-level--elevated {
+    background-color: $risk-elevated;
+}
+
+.o-risk-level--high {
+    background-color: $risk-high;
+}
+
+.o-risk-level--severe {
+    background-color: $risk-severe;
+}

@@ -1,0 +1,28 @@
+/* =========================================================================  */
+/* Component: advanced search */
+/* =========================================================================  */
+
+.c-advanced-search__head {
+    padding: 2rem 0 0;
+}
+
+.c-advanced-search__filter {
+    margin-top: 2rem;
+}
+
+.c-advanced-search__footer {
+    padding: 1.5rem 2rem;
+    border-top: .1rem solid $neutral-stroke;
+}
+
+.c-advanced-search__footer .o-btn:last-child {
+    float: right;
+}
+
+.c-advanced-search .c-scroll-box__scrollable {
+    max-height: 45rem;
+}
+
+.c-advanced-search .c-entity {
+    cursor: grab;
+}

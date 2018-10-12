@@ -1,0 +1,90 @@
+/* =========================================================================  */
+/* Neutral colors */
+/* =========================================================================  */
+
+$white: #ffffff;
+$black: #000000;
+
+/**
+ * Shades of grey, from the darkest to the lightest.
+ */
+$neutral-1: #575A61;
+$neutral-2: #888D95;
+$neutral-3: #CBCBCB;
+$neutral-4: #E9E9E9;
+$neutral-5: #F6F6F6;
+$neutral-6: #fbfcfc;
+
+/* =========================================================================  */
+/* Colors */
+/* =========================================================================  */
+
+$blue: #007FF3;
+$light-blue: #99C6F3;
+$utra-light-blue: #e5f2fd;
+
+$purple: #0D0DC7;
+$light-purple: #DDDDF8;
+$ultra-light-purple: #ECEDFC;
+
+$red: #FF332E;
+$light-red: #FFD6D4;
+
+$green: #59FCAA;
+$light-green: #E9FFF4;
+
+$transparent-black: rgba($black, 0.08);
+
+/**
+ * Docs
+ */
+$code-bg: #1D252C;
+$code-string: #B7C5D3;
+$code-punctuation: #718CA1;
+$code-tag: #008B94;
+$code-attr: #33CED8;
+$code-attr-value: #539AFC;
+$code-selection: rgba($white, 0.15);
+$code-line: #333F45;
+
+/**
+ * Risk levels
+ */
+$risk-low: #ABE1BC;
+$risk-guarded: #2AAFBF;
+$risk-elevated: #F5E276;
+$risk-high: #FBA504;
+$risk-severe: #FF5D3C;
+$risk-neutral: #929292;
+
+/* =========================================================================  */
+/* Aliases */
+/* =========================================================================  */
+
+$neutral-text: $neutral-2;
+$neutral-text-dark: $neutral-1;
+$neutral-stroke: $neutral-4;
+$neutral-stroke-dark: $neutral-2;
+$neutral-btn: $neutral-4;
+$neutral-btn-hover: darken($neutral-btn, 8%);
+$disabled: $neutral-3;
+$neutral-bg: $neutral-5;
+$neutral-bg-light: $neutral-6;
+
+$primary-color: $purple;
+$primary-color-hover: darken($primary-color, 4%);
+$primary-color-bg: $ultra-light-purple;
+$primary-color-bg-hover: $light-purple;
+
+$positive-text: $green;
+$positive-bg: $light-green;
+$positive-bg-hover: darken($light-green, 4%);
+
+$negative-text: $red;
+$negative-text-hover: darken($red, 10%);
+$negative-bg: $light-red;
+$negative-bg-hover: darken($light-red, 4%);
+
+$focus-ring: $light-blue;
+
+$box-shadow-color: $transparent-black;

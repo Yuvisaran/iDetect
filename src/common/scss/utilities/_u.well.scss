@@ -1,0 +1,25 @@
+.u-well {
+    @include well;
+}
+
+.u-well--small {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.u-well--outline {
+    background-color: transparent;
+    border: .1rem solid $neutral-btn;
+}
+
+.u-well--white {
+    background-color: $white;
+}
+
+/* =========================================================================  */
+/* Sizes */
+/* =========================================================================  */
+
+.u-well--medium {
+    width: 38rem;
+}

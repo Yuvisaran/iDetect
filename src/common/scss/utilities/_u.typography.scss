@@ -1,0 +1,30 @@
+/* =========================================================================  */
+/* Overflow */
+/* =========================================================================  */
+
+.u-dont-wrap {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+/* =========================================================================  */
+/* Behavior */
+/* =========================================================================  */
+
+.u-unbreakable {
+    display: inline-block !important;
+}
+
+.u-break {
+    display: block !important;
+}
+
+.u-text-sans {
+    @include font('body-sans');
+}
+
+.u-link-reset {
+    @include link-reset();
+}

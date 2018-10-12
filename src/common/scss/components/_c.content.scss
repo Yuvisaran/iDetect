@@ -1,0 +1,180 @@
+/* =========================================================================  */
+/* Component: Content (right side of dashboard) */
+/* =========================================================================  */
+
+.c-content {
+    display: flex;
+    height: 100vh;
+    align-items: flex-start;
+    flex-direction: column;
+    background-color: $neutral-bg;
+    transition: opacity .1s ease-in-out;
+}
+
+/* =========================================================================  */
+/* Component: Content inner wrapper (containing contextual content) */
+/* =========================================================================  */
+
+.c-content__view {
+    display: flex;
+    flex: 1;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+/* =========================================================================  */
+/* Component: Actions for specific view */
+/* =========================================================================  */
+
+.c-content__actions {
+    width: 100%;
+    padding-right: $spacing-xl;
+    position: relative;
+    padding: $base-spacing $spacing-xl $base-spacing 0;
+}
+
+.c-content__actions .g-list {
+    display: inline-block;
+}
+
+.c-content__actions .g-list:last-child {
+    float: right;
+}
+
+// Styles counter
+.js-empty-list-item {
+    line-height: 1em;
+    padding: 0.6rem 0;
+    @include font('medium');
+    color: $neutral-text;
+}
+
+/* =========================================================================  */
+/* Component: Wrapper for the contextual buttons & the scrollable content */
+/* =========================================================================  */
+
+.c-content__inner-wrapper {
+    display: flex;
+    width: 100%;
+    flex: 1;
+    flex-direction: column;
+    height: 100%;
+    padding-left: $spacing-xl;
+    position: relative;
+}
+
+.c-content__inner-wrapper--full {
+    padding: 0;
+
+    .c-content__actions {
+        padding-left: $spacing-xl;
+    }
+}
+
+/* =========================================================================  */
+/* Component: Wrapper that allows the content to overflow on bottom */
+/* =========================================================================  */
+
+/* 1. Compensate the display: inline-block of children */
+.c-content__scrollable {
+    transition: opacity .2s ease-in-out;
+    overflow-x: auto;
+    width: 100%;
+    padding-top: $spacing-s;
+    padding-right: $spacing-xl;
+    position: relative;
+    font-size: 0; /* [1] */
+}
+
+/* =========================================================================  */
+/* Component: Wrapper that allows the content to overflow on bottom */
+/* =========================================================================  */
+
+@keyframes slideLeft {
+    0% {
+        opacity: 0;
+        width: 0;
+    }
+    100% {
+        opacity: 1;
+        width: 280px;
+    }
+}
+
+.c-content__sidebar {
+    width: 0;
+    display: flex;
+    background-color: $white;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.c-content__sidebar:before {
+    content: "";
+    width: 2.5rem;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translateX(-100%);
+    background-color: $neutral-bg;
+}
+
+.c-content__sidebar:not(.is-hidden) {
+    animation: slideLeft .08s ease-in-out forwards;
+}
+
+.c-content__sidebar.is-hidden {
+    opacity: 0;
+}
+
+.c-content__sidebar-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: $white;
+    padding: 1.7rem;
+    display: flex;
+    box-shadow: 0 0 .5rem rgba($black, .1);
+}
+
+.c-content__sidebar-btn {
+    flex: 1;
+}
+
+.c-content__sidebar-btn:first-child {
+    margin-right: 1rem;
+}
+
+/* =========================================================================  */
+/* Modifier: Table view */
+/* =========================================================================  */
+
+.c-content__view--table {
+    display: none;
+    margin-left: -2.5rem;
+    max-height: calc(100% - 55px);
+    overflow-x: auto;
+}
+
+/* =========================================================================  */
+/* Interaction: Scroll on c-content displays actions box-shadow */
+/* =========================================================================  */
+
+.c-content__actions {
+    @include bg-shadow(bottom, '.is-scrolled');
+
+    &:after {
+        width: calc(100% + 2.5rem);
+        left: -2.5rem;
+    }
+}
+
+/* =========================================================================  */
+/* Interaction: Loading state */
+/* =========================================================================  */
+
+.is-loading .c-content {
+    @include isLoading;
+}

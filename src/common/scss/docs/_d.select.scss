@@ -1,0 +1,21 @@
+.d-select {
+    width: 50%;
+    border-right: 1px solid #eee;
+    padding-bottom: 30px;
+    padding-right: 50px;
+
+    &:nth-of-type(even) {
+        border-right: 0;
+        padding-left: 50px;
+        padding-right: 0px;
+    }
+}
+
+.d-select__title {
+    @include font('large');
+    margin-bottom: 3rem;
+}
+
+.js .d-select__button {
+    display: none;
+}

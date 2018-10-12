@@ -1,0 +1,157 @@
+/* =========================================================================  */
+/* Conversation */
+/* =========================================================================  */
+
+$closing-animation-duration: 0.1s;
+
+.c-conversation {
+    width: 38rem;
+    height: 55.5rem;
+    pointer-events: none;
+    position: relative;
+}
+
+.c-conversation__trigger {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    pointer-events: all;
+    cursor: pointer;
+    z-index: 1;
+
+    [data-whatinput="mouse"] &:focus {
+        outline: none;
+    }
+}
+
+.c-conversation__flyout {
+    @include floating-element;
+    width: 38rem;
+    height: 41.5rem;
+    position: absolute;
+    left: 0;
+    bottom: 5.5rem;
+    // overflow: hidden;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(2rem);
+    transition: height 0s linear $closing-animation-duration, opacity $closing-animation-duration linear, transform $closing-animation-duration linear;
+}
+
+.c-conversation__flyout-wrapper {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 38rem;
+    height: 50rem;
+    display: flex;
+    flex-direction: column;
+    background-color: $white;
+}
+
+.c-conversation__flyout.is-opened {
+    pointer-events: all;
+    height: 50rem;
+    opacity: 1;
+    transform: translateY(0);
+    transition: height 0.2s ease-in, opacity 0.1s ease-in, transform 0s;
+}
+
+// TODO: espacer les bulles et retirer le dégradé sur le haut de la scrollbox
+
+.c-conversation__head {
+    padding: $spacing-l;
+    position: relative;
+    transform: translateY(-1rem);
+    opacity: 0;
+    transition: all 0s linear $closing-animation-duration;
+}
+
+.c-conversation__flyout.is-opened .c-conversation__head {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.2s ease-out 0.1s;
+}
+
+.c-conversation__head:after {
+    content: '';
+    display: block;
+    width: calc(100% - #{2 * $spacing-l});
+    height: 0.1rem;
+    background-color: $neutral-stroke;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    margin: 0 $spacing-l;
+}
+
+.c-conversation__participants {
+    color: $neutral-text;
+    @include font('small');
+}
+
+.c-conversation__actions {
+    position: absolute;
+    right: $spacing-l - 1;
+    top: $spacing-l - 0.6;
+}
+
+.c-conversation__body {
+    flex-grow: 1;
+    flex-shrink: 1;
+    max-height: 33.5rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transition: all 0s linear $closing-animation-duration;
+}
+
+.c-conversation__flyout.is-opened .c-conversation__body {
+    opacity: 1;
+    transition: opacity 0.2s ease-out 0.2s;
+}
+
+.c-conversation__body .c-scroll-box {
+    height: 100%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.c-conversation__body .c-scroll-box__scrollable {
+    display: flex;
+    flex-direction: column;
+    max-height: none;
+}
+
+.c-conversation__body .js-scroll-box-content {
+    padding: $spacing-l 0;
+}
+
+.c-conversation__messages {
+    width: 100%;
+    overflow: hidden;
+}
+
+.c-conversation__message:nth-child(n+2) {
+    margin-top: $spacing-l;
+}
+
+.c-conversation__typing {
+    @include font('xx-small');
+    color: $neutral-text;
+}
+
+.c-conversation__foot {
+    padding: $spacing-l;
+    transform: translateY(1rem);
+    opacity: 0;
+    transition: all 0s linear $closing-animation-duration;
+}
+
+.c-conversation__flyout.is-opened .c-conversation__foot {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.1s ease-out 0.2s;
+}

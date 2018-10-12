@@ -1,0 +1,31 @@
+.g-toggles--split {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.g-toggles--split .o-toggle {
+    flex-basis: calc(50% - 10px);
+}
+
+.g-toggles--split .o-toggle:nth-child(odd) {
+    margin-right: 10px;
+}
+
+.g-toggles--split .o-toggle__label span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* =========================================================================  */
+/* Scope: checkbox group */
+/* =========================================================================  */
+
+.g-toggles .o-toggle.u-well {
+    margin-bottom: 1.2rem;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}

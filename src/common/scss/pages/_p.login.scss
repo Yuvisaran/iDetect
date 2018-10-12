@@ -1,0 +1,16 @@
+/* =========================================================================  */
+/* Page: Login */
+/* =========================================================================  */
+
+.p-login {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    background-color: $neutral-bg;
+}
+
+.p-login .c-form {
+    position: absolute;
+}

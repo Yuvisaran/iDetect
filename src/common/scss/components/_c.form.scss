@@ -1,0 +1,202 @@
+/* =========================================================================  */
+/* Form */
+/* =========================================================================  */
+
+/**
+ * 1. Overrides table display defined by normalize.css.
+ */
+.c-form__title {
+    display: block; /* [1] */
+    width: 100%;
+    @include font('copy-large');
+    margin-bottom: $spacing-m;
+    line-height: 1em;
+    color: $neutral-text-dark;
+    text-align: center;
+}
+
+.c-form__intro {
+    @include font('copy-medium');
+    margin-bottom: 3.5rem;
+    color: $neutral-text;
+}
+
+.c-form__field {
+    border: 0;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    text-align: left;
+}
+
+.c-form__field-description {
+    @include font('small');
+    color: $neutral-text-dark;
+}
+
+.c-form__field:nth-child(n+2) {
+    margin-top: $spacing-l;
+}
+
+.c-form__field--float {
+    display: inline-block;
+    width: auto;
+}
+
+.c-form__field--float:nth-child(n+2) {
+    margin-top: 0;
+    margin-left: $base-spacing;
+}
+
+.c-form__sub-field {
+    display: inline-block;
+}
+
+.c-form__sub-field:nth-child(n+2) {
+    margin-left: $base-spacing;
+    position: relative;
+    top: -0.1rem;
+}
+
+.c-form__action {
+    margin-top: $spacing-m;
+    width: 100%;
+}
+
+.c-form__icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 1rem;
+}
+
+.c-form__field-wrapper {
+    position: relative;
+}
+
+.c-form__results {
+    max-height: 250px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: $white;
+    z-index: 10;
+    box-shadow: $shadow;
+    display: none;
+    overflow: scroll;
+}
+
+.c-form__results.is-visible {
+    display: block;
+}
+
+.c-form__editable-item {
+    @include font('medium');
+    cursor: pointer;
+    color: $neutral-text;
+    padding: .3rem 2rem;
+
+    &:hover {
+        background-color: $neutral-bg;
+    }
+}
+
+.c-form__editable-item .o-badge {
+    float: right;
+}
+
+.c-form__results-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 1rem 0;
+}
+
+.c-form__btn {
+    transition: color .08s ease-in-out;
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: none;
+
+    &.is-visible {
+        display: block;
+    }
+
+    &:hover {
+        color: $primary-color;
+    }
+}
+
+/* =========================================================================  */
+/* Modifier: Login form */
+/* =========================================================================  */
+
+.c-form--login {
+    width: 48rem;
+    text-align: center;
+    padding: 10.5rem;
+    background-color: $white;
+}
+
+/* =========================================================================  */
+/* State: error */
+/* =========================================================================  */
+
+@keyframes displayNotice {
+    0% {
+        transform: translateY(10%);
+        visibility: visible;
+    }
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+        visibility: visible;
+        height: auto;
+        pointer-events: all;
+        padding: $notice-padding;
+    }
+}
+
+.c-form__error-notice {
+    pointer-events: none;
+    visibility: hidden;
+    transform: translateY(10%);
+    opacity: 0;
+    margin-top: $spacing-l;
+}
+
+.c-form--login.has-error .c-form__action {
+    margin-top: $spacing-l;
+}
+
+.c-form--login.has-error .c-form__error-notice {
+    animation: displayNotice .1s ease-in-out forwards;
+}
+
+/* =========================================================================  */
+/* State: selected */
+/* =========================================================================  */
+
+.c-form__editable-item.is-selected {
+    opacity: .4;
+    pointer-events: none;
+}
+
+/* =========================================================================  */
+/* Modifier: inline field */
+/* =========================================================================  */
+
+.c-form__field--inline {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.c-form__field--inline .c-form__input {
+    max-width: 11rem;
+    margin-left: 2rem;
+    margin-top: 0;
+}

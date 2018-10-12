@@ -1,0 +1,22 @@
+.d-md > h3 {
+    margin: 3rem 0 $spacing-l;
+}
+
+.d-md > p {
+    margin: $spacing-l 0;
+    max-width: 50rem;
+}
+
+.d-md > p:first-child {
+    margin-top: 4rem;
+}
+
+.d-md code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    font-size: 90%;
+    padding: 0.4rem;
+    margin: 0 0.2rem;
+    color: $code-string;
+    background-color: $code-bg;
+    border-radius: $border-radius;
+}
